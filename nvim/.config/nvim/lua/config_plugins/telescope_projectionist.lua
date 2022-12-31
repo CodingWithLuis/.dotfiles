@@ -17,11 +17,8 @@ local function getPaths(type)
     return getNavCmds()[type]
 end
 
-M.find = function (opts)
+M.find = function(opts)
     opts = opts or {}
-    opts.path_display = utils.get_default(opts.path_display, "hidden")
-    opts.ignore_filename = utils.get_default(opts.ignore_filename, true)
-    opts.include_extensions = utils.get_default(opts.include_extensions, false)
 
     local results = {}
 
@@ -57,7 +54,7 @@ M.find = function (opts)
                     return
                 end
 
-                actions._close(prompt_bufnr, true)
+                actions.close(prompt_bufnr)
                 M.findByType(selection.value.filename, opts)
             end)
 
@@ -69,9 +66,6 @@ end
 
 M.findByType = function(type, opts)
     opts = opts or {}
-    opts.path_display = utils.get_default(opts.path_display, "hidden")
-    opts.ignore_filename = utils.get_default(opts.ignore_filename, true)
-    opts.include_extensions = utils.get_default(opts.include_extensions, false)
 
     local paths = getPaths(type)
     local results = {}
@@ -86,7 +80,7 @@ M.findByType = function(type, opts)
             })
         end
     end
-    -- print(vim.inspect(results))
+
     pickers.new(opts, {
         promt_title = type,
         finder = finders.new_table {
