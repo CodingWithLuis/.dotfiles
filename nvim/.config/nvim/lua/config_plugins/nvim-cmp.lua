@@ -123,7 +123,10 @@ null_ls.setup({
         end
     end,
     sources = {
-        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.code_actions.eslint_d,
+        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.formatting.markdownlint,
+        null_ls.builtins.diagnostics.proselint
     },
 })
 
@@ -169,7 +172,7 @@ local dlsconfig = require 'diagnosticls-configs'
 local phpcs = require 'diagnosticls-configs.linters.phpcs'
 local phpstan = require 'diagnosticls-configs.linters.phpstan'
 local eslint = require 'diagnosticls-configs.linters.eslint'
-local prettier = require 'diagnosticls-configs.formatters.prettier_eslint'
+local prettier_linter = require 'diagnosticls-configs.formatters.prettier_eslint'
 
 dlsconfig.init {
     on_attach = on_attach
@@ -182,7 +185,7 @@ dlsconfig.setup {
     },
     ['vue'] = {
         linter = eslint,
-        formatter = prettier
+        formatter = prettier_linter
     },
 
 }
