@@ -29,7 +29,7 @@ require('config_plugins.comment')
 
 require("indent_blankline").setup {
     space_char_blankline = " ",
-    show_current_context = true,
+    show_current_context = true
     -- show_current_context_start = true,
 }
 
@@ -50,7 +50,7 @@ vim.cmd [[
 let g:python3_host_prog = "/usr/bin/python"
 ]]
 
---cmd[[autocmd BufNewFile,BufRead *.blade.php set ft=blade]]
+-- cmd[[autocmd BufNewFile,BufRead *.blade.php set ft=blade]]
 -- cmd[[autocmd BufNewFile,BufRead *.js set ft=javascript]]
 -- cmd[[autocmd CursorHold * silent! checktime]]
 -- cmd[[autocmd CursorHold,CursorHoldI * lua require('code_action_utils').code_action_listener()]]
@@ -65,9 +65,9 @@ require("gruvqueen").setup({
         italic_variables = true,
         invert_selection = false,
         style = 'original', -- possible values: 'original', 'mix', 'material'
-        transparent_background = true,
+        transparent_background = true
         -- bg_color = "black",
-    },
+    }
 })
 
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
