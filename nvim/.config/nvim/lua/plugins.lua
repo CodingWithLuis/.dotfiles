@@ -2,8 +2,10 @@ local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
-        install_path })
+    packer_bootstrap = fn.system({
+        'git', 'clone', '--depth', '1',
+        'https://github.com/wbthomason/packer.nvim', install_path
+    })
 end
 
 return require('packer').startup(function(use)
@@ -18,6 +20,7 @@ return require('packer').startup(function(use)
 
     use('neovim/nvim-lspconfig')
     use { "williamboman/mason.nvim" }
+    use "williamboman/mason-lspconfig.nvim"
 
     use('jose-elias-alvarez/null-ls.nvim')
     use('MunifTanjim/prettier.nvim')
@@ -31,7 +34,7 @@ return require('packer').startup(function(use)
         requires = {
             "nvim-lua/plenary.nvim", -- required to update phpactor
             "neovim/nvim-lspconfig" -- required to automaticly register lsp serveur
-        },
+        }
     })
 
     use "Shatur/neovim-session-manager"
@@ -68,17 +71,13 @@ return require('packer').startup(function(use)
     use {
         'ThePrimeagen/refactoring.nvim',
         requires = {
-            { 'nvim-lua/plenary.nvim' },
-            { 'nvim-treesitter/nvim-treesitter' }
+            { 'nvim-lua/plenary.nvim' }, { 'nvim-treesitter/nvim-treesitter' }
         }
     }
 
     use {
         'ThePrimeagen/harpoon',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'nvim-lua/popup.nvim',
-        },
+        requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' }
     }
 
     use { 'LunarWatcher/auto-pairs', branch = 'develop' }
@@ -110,30 +109,22 @@ return require('packer').startup(function(use)
 
     use 'JoosepAlviste/nvim-ts-context-commentstring'
 
-    use {
-        'numToStr/Comment.nvim',
-    }
+    use { 'numToStr/Comment.nvim' }
 
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
-        },
+            'nvim-tree/nvim-web-devicons' -- optional, for file icons
+        }
     }
 
     use({
         "aserowy/tmux.nvim",
         config = function()
             require("tmux").setup({
-                copy_sync = {
-                    enable = false,
-                },
-                navigation = {
-                    enable_default_keybindings = true,
-                },
-                resize = {
-                    enable_default_keybindings = true,
-                }
+                copy_sync = { enable = false },
+                navigation = { enable_default_keybindings = true },
+                resize = { enable_default_keybindings = true }
             })
         end
     })
@@ -141,12 +132,16 @@ return require('packer').startup(function(use)
     use 'camgraff/telescope-tmux.nvim'
 
     -- markdown
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        ft = { "markdown" }
+    })
 
     use 'lewis6991/impatient.nvim'
 
-    --Git Integration
+    -- Git Integration
     use 'tpope/vim-fugitive'
     use 'mhinz/vim-signify'
     use "lewis6991/gitsigns.nvim"
@@ -158,7 +153,5 @@ return require('packer').startup(function(use)
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
-    if packer_bootstrap then
-        require('packer').sync()
-    end
+    if packer_bootstrap then require('packer').sync() end
 end)

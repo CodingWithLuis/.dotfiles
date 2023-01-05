@@ -7,25 +7,27 @@ map.set('n', '<C-G>', builtin.git_files, {})
 map.set('n', '<leader>fg', builtin.live_grep, {})
 map.set('n', '<leader>ob', builtin.buffers, {})
 map.set('n', '<leader>ht', builtin.help_tags, {})
-map.set('n', '<leader>ps', function()
-    builtin.grep_string({ search = vim.fn.input("Grep > ") })
-end, {})
+map.set('n', '<leader>ps',
+    function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end,
+    {})
 
---Tressiter
+-- Tressiter
 map.set('n', '<leader>ts', builtin.treesitter, {})
 
---Git
+-- Git
 map.set('n', '<leader>gc', builtin.git_commits, {})
 map.set('n', '<leader>gb', builtin.git_branches, {})
 map.set('n', '<leader>gs', builtin.git_status, {})
 
---flutter
+-- flutter
 map.set('n', '<leader>fc', require("telescope").extensions.flutter.commands, {})
 
-map.set('n', '<leader>la', require("config_plugins.telescope_custom").laravel_artisan, {})
-map.set('n', '<leader>lp', require("config_plugins.telescope_custom").project_find, {})
+map.set('n', '<leader>la',
+    require("config_plugins.telescope_custom").laravel_artisan, {})
+map.set('n', '<leader>lp',
+    require("config_plugins.telescope_custom").project_find, {})
 
---Sessions
+-- Sessions
 map.set('n', '<leader>ls', '<cmd>SessionManager load_session<cr>', {})
 map.set('n', '<leader>ds', '<cmd>SessionManager delete_session<cr>', {})
 map.set('n', '<leader>ll', '<cmd>SessionManager load_last_session<cr>', {})
