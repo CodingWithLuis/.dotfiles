@@ -38,16 +38,16 @@ opt.cursorline = true
 -- Select All in the Current File
 vim.api.nvim_set_keymap('n', '<C-a>', 'gg<S-v>G', { noremap = true })
 
---Save and Quit Neovim
+-- Save and Quit Neovim
 vim.api.nvim_set_keymap('n', '<C-W>', ':write<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-q>', ':q<CR>', { noremap = true })
 
---Buffers
+-- Buffers
 vim.api.nvim_set_keymap('n', '<C-x>', ':bdelete<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>nb', ':bNext<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>pb', ':bprevious<CR>', { noremap = true })
 
---Better window navigation
+-- Better window navigation
 vim.api.nvim_set_keymap('n', '<Left>', '<C-w>h', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Down>', '<C-w>j', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Up>', '<C-w>k', { noremap = true })
@@ -57,17 +57,24 @@ vim.api.nvim_set_keymap('n', '<Right>', '<C-w>l', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>vs', ':vsplit<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>sh', ':split<CR>', { noremap = true })
 
-vim.api.nvim_set_keymap('n', '<C-right>', ':vertical resize +5<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-left>', ':vertical resize -5<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-right>', ':vertical resize +5<CR>',
+    { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-left>', ':vertical resize -5<CR>',
+    { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-up>', ':resize +5<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-down>', ':resize -5<CR>', { noremap = true })
 
---Nvim-Tree file manager
-vim.api.nvim_set_keymap('n', '<leader>nt', ':NvimTreeToggle<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>ff', ':NvimTreeFindFile<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>ot', ':NvimTreeOpen<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>ct', ':NvimTreeClose<CR>', { noremap = true })
+-- Nvim-Tree file manager
+vim.api.nvim_set_keymap('n', '<leader>nt', ':NvimTreeToggle<CR>',
+    { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>ff', ':NvimTreeFindFile<CR>',
+    { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>',
+    { noremap = true })
+vim.api
+    .nvim_set_keymap('n', '<leader>ot', ':NvimTreeOpen<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>ct', ':NvimTreeClose<CR>',
+    { noremap = true })
 
 -- Prime
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

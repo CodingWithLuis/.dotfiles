@@ -4,7 +4,10 @@
 live_config_reload: true
 
 env:
-  TERM: screen-256color
+  TERM: tmux-256color
+
+shell:
+  program: /usr/bin/tmux
 
 window:
   opacity: 0.80
@@ -14,6 +17,11 @@ window:
   dynamic_padding: false
   decorations: none
   startup_mode: Fullscreen
+
+selection:
+  save_to_clipboard: true
+
+scrolling:
   history: 10000
   multiplier: 3
 
@@ -33,32 +41,34 @@ font:
   italic:
     family: MesloLGS NF
     style: Italic
-  size: 17.0
+  size: 14.0
 
 colors:
-   normal:
-    black: "0x1D202F"
-    red: "0xf7768e"
-    green: "0x9ece6a"
-    yellow: "0xe0af68"
-    blue: "0x7aa2f7"
-    magenta: "0xbb9af7"
-    cyan: "0x7dcfff"
-    white: "0xa9b1d6"
+    # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xfe0100'
+    green:   '0x33ff00'
+    yellow:  '0xfeff00'
+    blue:    '0x0066ff'
+    magenta: '0xcc00ff'
+    cyan:    '0x00ffff'
+    white:   '0xd0d0d0'
 
-   bright:
-    black: "0x414868"
-    red: "0xf7768e"
-    green: "0x9ece6a"
-    yellow: "0xe0af68"
-    blue: "0x7aa2f7"
-    magenta: "0xbb9af7"
-    cyan: "0x7dcfff"
-    white: "0xc0caf5"
+  # Bright colors
+  bright:
+    black:   '0x808080'
+    red:     '0xfe0100'
+    green:   '0x33ff00'
+    yellow:  '0xfeff00'
+    blue:    '0x0066ff'
+    magenta: '0xcc00ff'
+    cyan:    '0x00ffff'
+    white:   '0xFFFFFF'
 
-# cursor:
-#   style:
-#     shape: Block
-#   vi_mode_style:
-#     shape: Beam
-#   unfocused_hollow: true
+cursor:
+  style:
+    shape: Block
+  vi_mode_style:
+    shape: Beam
+  unfocused_hollow: true
