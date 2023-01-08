@@ -1,0 +1,64 @@
+# import:
+#   - ~/.alacritty-colorscheme/themes/breeze.yaml
+
+live_config_reload: true
+
+env:
+  TERM: screen-256color
+
+window:
+  opacity: 0.80
+  padding:
+    x: 18
+    y: 16
+  dynamic_padding: false
+  decorations: none
+  startup_mode: Fullscreen
+  history: 10000
+  multiplier: 3
+
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }
+
+mouse:
+  hide_when_typing: true
+
+font:
+  normal:
+    family: MesloLGS NF
+    style: Regular
+  bold:
+    family: MesloLGS NF
+    style: Bold
+  italic:
+    family: MesloLGS NF
+    style: Italic
+  size: 17.0
+
+colors:
+   normal:
+    black: "0x1D202F"
+    red: "0xf7768e"
+    green: "0x9ece6a"
+    yellow: "0xe0af68"
+    blue: "0x7aa2f7"
+    magenta: "0xbb9af7"
+    cyan: "0x7dcfff"
+    white: "0xa9b1d6"
+
+   bright:
+    black: "0x414868"
+    red: "0xf7768e"
+    green: "0x9ece6a"
+    yellow: "0xe0af68"
+    blue: "0x7aa2f7"
+    magenta: "0xbb9af7"
+    cyan: "0x7dcfff"
+    white: "0xc0caf5"
+
+# cursor:
+#   style:
+#     shape: Block
+#   vi_mode_style:
+#     shape: Beam
+#   unfocused_hollow: true

@@ -19,6 +19,14 @@ map.set('n', '<leader>gc', builtin.git_commits, {})
 map.set('n', '<leader>gb', builtin.git_branches, {})
 map.set('n', '<leader>gs', builtin.git_status, {})
 
+map.set('n', '<leader>dd', function()
+    builtin.git_files({
+        prompt_title = "Dotfiles",
+        cwd = "$HOME/.dotfiles",
+        show_untracked = true
+    })
+end)
+
 -- flutter
 map.set('n', '<leader>fc', require("telescope").extensions.flutter.commands, {})
 
