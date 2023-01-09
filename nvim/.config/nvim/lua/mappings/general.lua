@@ -93,3 +93,6 @@ vim.keymap.set("x", "<leader>p", "\"_dP")
 vim.keymap.set("n", "<C-n>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 vim.keymap.set("n", "<leader>e", "<cmd>!chmod +x %<CR>", { silent = true })
+
+vim.keymap.set("n", "<C-d>;", "<C-d>zz");
+vim.keymap.set("n", "<C-u>", "<C-u>zz");
