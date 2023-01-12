@@ -1,6 +1,13 @@
 # Code with Luis' Dotfiles
 
+## Table of Contents
+
 <!--toc:start-->
+- [Screenshots](#screenshots)
+  - [LSP autocomplete](#lsp-autocomplete)
+  - [LSP Warning and Errors](#lsp-warning-and-errors)
+  - [Telescope Searching Files](#telescope-searching-files)
+  - [LSP Code Actions](#lsp-code-actions)
 - [Neovim Setup](#neovim-setup)
   - [Neovim Package Manager](#neovim-package-manager)
   - [Neovim Theme](#neovim-theme)
@@ -23,7 +30,26 @@
 - [Tmux](#tmux)
   - [Tmux Plugin Manager](#tmux-plugin-manager)
   - [Tmux Plugins](#tmux-plugins)
+- [About me](#about-me)
 <!--toc:end-->
+
+## Screenshots
+
+### LSP autocomplete
+
+![LSP Autocomplete](images/LSP_sugerencias.png)
+
+### LSP Warning and Errors
+
+![LSP Warning](images/LSP.png)
+
+### Telescope Searching Files
+
+![Telescope](images/Telescope.png)
+
+### LSP Code Actions
+
+![Code Actions](images/code_actions.png)
 
 ## Neovim Setup
 
@@ -184,3 +210,8 @@ Require [Neovim](https://neovim.io/) >=0.8
 - [tmux-plugins/tmux-continuum](https://github.com/tmux-plugins/tmux-continuum): Continuous saving of tmux environment. Automatic restore when tmux is started. Automatic tmux start when computer is turned on
 
 - [tmux-plugins/tmux-yank](https://github.com/tmux-plugins/tmux-yank): Tmux plugin for copying to system clipboard. Works on OSX, Linux and Cygwin.
+
+## About me
+
+- I'm Luis Zelaya, I have passion for coding. I'm a web developer, right now focus on Laravel (PHP framework).
+- You can check my [Youtube Channel](https://www.youtube.com/channel/UCTzKyvZnQdpiVkBHG_udHFw)
