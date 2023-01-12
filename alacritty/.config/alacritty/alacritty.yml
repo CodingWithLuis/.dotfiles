@@ -16,7 +16,7 @@ window:
     y: 16
   dynamic_padding: false
   decorations: none
-  startup_mode: Fullscreen
+  startup_mode: Maximized
 
 selection:
   save_to_clipboard: true
