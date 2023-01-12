@@ -1,14 +1,39 @@
 # Code with Luis' Dotfiles
 
+<!--toc:start-->
+- [Neovim Setup](#neovim-setup)
+  - [Neovim Package Manager](#neovim-package-manager)
+  - [Neovim Theme](#neovim-theme)
+  - [LSP (Diagnostics, Code Actions, Completions, and more)](#lsp-diagnostics-code-actions-completions-and-more)
+  - [Sessions](#sessions)
+  - [Testing](#testing)
+  - [Laravel (PHP Framework)](#laravel-php-framework)
+  - [Markdown](#markdown)
+  - [Manage Projects](#manage-projects)
+  - [Fuzzy Finder](#fuzzy-finder)
+  - [GIT Integration](#git-integration)
+  - [Tmux Integration](#tmux-integration)
+  - [Comments](#comments)
+  - [Status Bar](#status-bar)
+  - [Utilities](#utilities)
+  - [Snippets](#snippets)
+- [ZSH](#zsh)
+  - [Zsh Plugins](#zsh-plugins)
+  - [Zsh Theme](#zsh-theme)
+- [Tmux](#tmux)
+  - [Tmux Plugin Manager](#tmux-plugin-manager)
+  - [Tmux Plugins](#tmux-plugins)
+<!--toc:end-->
+
 ## Neovim Setup
 
 Require [Neovim](https://neovim.io/) >=0.8
 
-### Package Manager
+### Neovim Package Manager
 
 - [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim): Plugin Package Manager
 
-### Theme
+### Neovim Theme
 
 - [Murtaza-Udaipurwala/gruvqueen](https://github.com/murtaza-u/gruvqueen): Port of famous gruvbox theme in lua(inspired by gruvbox-material)
 
@@ -130,7 +155,7 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 ## ZSH
 
-### Plugins
+### Zsh Plugins
 
 - [laravel](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/laravel): This plugin adds aliases and autocompletion for Laravel
 
@@ -138,7 +163,7 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting): This package provides syntax highlighting for the shell zsh
 
-### Theme
+### Zsh Theme
 
 - [powerlevel10k/powerlevel10k](https://github.com/romkatv/powerlevel10k): Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.
 
@@ -148,7 +173,7 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [tmux-plugins/tpm](https://github.com/tmux-plugins/tpm)
 
-### Plugins
+### Tmux Plugins
 
 - [tmux-plugins/tmux-sensible](https://github.com/tmux-plugins/tmux-sensible)
 
