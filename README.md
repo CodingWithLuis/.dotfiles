@@ -130,4 +130,32 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 ## ZSH
 
+### Plugins
+
+- [laravel](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/laravel): This plugin adds aliases and autocompletion for Laravel
+
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions): It suggests commands as you type based on history and completions
+
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting): This package provides syntax highlighting for the shell zsh
+
+### Theme
+
+- [powerlevel10k/powerlevel10k](https://github.com/romkatv/powerlevel10k): Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.
+
 ## Tmux
+
+### Tmux Plugin Manager
+
+- [tmux-plugins/tpm](https://github.com/tmux-plugins/tpm)
+
+### Plugins
+
+- [tmux-plugins/tmux-sensible](https://github.com/tmux-plugins/tmux-sensible)
+
+- [tmux-plugins/tmux-resurrect](ithub.com/tmux-plugins/tmux-resurrect): Persists tmux environment across system restarts
+
+- [tmux-plugins/tmux-sessionist](https://github.com/tmux-plugins/tmux-sessionist): Lightweight tmux utils for manipulating sessions
+
+- [tmux-plugins/tmux-continuum](https://github.com/tmux-plugins/tmux-continuum): Continuous saving of tmux environment. Automatic restore when tmux is started. Automatic tmux start when computer is turned on
+
+- [tmux-plugins/tmux-yank](https://github.com/tmux-plugins/tmux-yank): Tmux plugin for copying to system clipboard. Works on OSX, Linux and Cygwin.
