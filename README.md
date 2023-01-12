@@ -18,9 +18,9 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim) Easily install and manage LSP servers, DAP servers, linters, and formatters.
 
-- [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim): Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim
+- [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim): Extension to mason.nvim that makes it easier to  -lspconfig with mason.nvim
 
-- [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim): Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+- [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim):  -Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 
 - [MunifTanjim/prettier.nvim](https://github.com/MunifTanjim/prettier.nvim): Prettier plugin for Neovim's built-in LSP client.
 
@@ -54,11 +54,19 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [nvim-treesitter/playground](https://github.com/nvim-treesitter/playground): View treesitter information directly in Neovim
 
+### GIT Integration
+
+- tpope/vim-fugitive
+
+- mhinz/vim-signify
+
+- lewis6991/gitsigns.nvim
+
 ### Utilities
 
 - [jiaoshijie/undotree](https://github.com/jiaoshijie/undotree): Manage the undos history
 
-- [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag): Use treesitter to auto close and auto rename html tag
+- [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag):  -treesitter to auto close and auto rename html tag
 
 - [phaazon/hop.nvim](https://github.com/phaazon/hop.nvim): Neovim motions on speed
 
@@ -67,6 +75,24 @@ Require [Neovim](https://neovim.io/) >=0.8
 - [tpope/vim-repeat](https://github.com/tpope/vim-repeat): Enable repeating supported plugin maps with "."
 
 - [LunarWatcher/auto-pairs](https://github.com/LunarWatcher/auto-pairs): Vim plugin, insert or delete brackets, parentheses, and quotes in pairs
+
+### Snippets
+
+- hrsh7th/cmp-vsnip
+
+- hrsh7th/vim-vsnip
+
+- hrsh7th/vim-vsnip-integ
+
+- saadparwaiz1/cmp_luasnip
+
+- L3MON4D3/LuaSnip
+
+- rafamadriz/friendly-snippets
+
+- onecentlin/laravel-blade-snippets-vscode
+
+- onecentlin/laravel5-snippets-vscode
 
 ## ZSH
 
