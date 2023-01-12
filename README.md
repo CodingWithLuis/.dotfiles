@@ -26,6 +26,8 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [glepnir/lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim): A light-weight lsp plugin based on neovim's built-in lsp with a highly performant UI
 
+- [folke/trouble.nvim](https://github.com/folke/trouble.nvim): A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing
+
 - [gbprod/phpactor.nvim](https://github.com/gbprod/phpactor.nvim): Lua version of the Phpactor vim plugin, PHP code actions and more.
 
 ### Sessions
@@ -46,6 +48,10 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [Kibadda/laravel-docs.nvim](https://github.com/Kibadda/laravel-docs.nvim): A telescope.nvim extension that offers Laravel documentation shortcuts
 
+### Markdown
+
+- [iamcco/mardown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim): markdown preview plugin for (neo)vim
+
 ### Manage Projects
 
 - [tpope/vim-projectionist](https://github.com/tpope/vim-projectionist): Granular project configuration
@@ -54,19 +60,45 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [nvim-treesitter/playground](https://github.com/nvim-treesitter/playground): View treesitter information directly in Neovim
 
+- [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon): Working only with the files you really need
+
+### Fuzzy Finder
+
+- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): Find files and Folders, Filter, Preview, Pick. All lua, all the time.
+
+- [nvim-telescope/telescope-file-browser.nvim](https://github.com/nvim-telescope/telescope-file-browser.nvim): is a file browser extension for telescope.nvim. It supports synchronized creation, deletion, renaming, and moving of files and folders
+
+- [nvim-telescope/telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim): Cool extension for Telescope, it means for example that neovim core stuff can fill the telescope picker like code actions.
+
 ### GIT Integration
 
-- tpope/vim-fugitive
+- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive): A Git wrapper
 
-- mhinz/vim-signify
+- [mhinz/vim-signify](https://github.com/mhinz/vim-signify): show a diff using Vim its sign column.
 
-- lewis6991/gitsigns.nvim
+- [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim):  Git integration for buffers
+
+### Tmux Integration
+
+- [aserowy/tmux.nvim](https://github.com/aserowy/tmux.nvim): tmux integration for nvim features pane movement and resizing from within nvim
+
+- [camgraff/telescope-tmux.nvim](https://github.com/camgraff/telescope-tmux.nvim): Integration for tmux with telescope.nvim
+
+### Comments
+
+- [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim): Smart and powerful comment plugin for neovim. Supports treesitter, dot repeat, left-right/up-down motions, hooks, and more
+
+- [JoosepAlviste/nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring): Neovim treesitter plugin for setting the commentstring based on the cursor location in a file
+
+### Status Bar
+
+- [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim): A blazing fast and easy to configure neovim statusline plugin written in pure lua
 
 ### Utilities
 
 - [jiaoshijie/undotree](https://github.com/jiaoshijie/undotree): Manage the undos history
 
-- [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag):  -treesitter to auto close and auto rename html tag
+- [windwp/nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag): treesitter to auto close and auto rename html tag
 
 - [phaazon/hop.nvim](https://github.com/phaazon/hop.nvim): Neovim motions on speed
 
@@ -76,23 +108,25 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [LunarWatcher/auto-pairs](https://github.com/LunarWatcher/auto-pairs): Vim plugin, insert or delete brackets, parentheses, and quotes in pairs
 
+- [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim): Indent guides for Neovim
+
 ### Snippets
 
-- hrsh7th/cmp-vsnip
+- [hrsh7th/cmp-vsnip](https://github.com/hrsh7th/cmp-vsnip): nvim-cmp source for vim-vsnip
 
-- hrsh7th/vim-vsnip
+- [hrsh7th/vim-vsnip](https://github.com/hrsh7th/vim-vsnip): Snippet plugin for vim/nvim that supports LSP/VSCode's snippet format
 
-- hrsh7th/vim-vsnip-integ
+- [hrsh7th/vim-vsnip-integ](https://github.com/hrsh7th/vim-vsnip-integ): vim-vsnip integrations to other plugins
 
-- saadparwaiz1/cmp_luasnip
+- [saadparwaiz1/cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip): luasnip completion source for nvim-cmp
 
-- L3MON4D3/LuaSnip
+- [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip): Snippet Engine for Neovim written in Lua.
 
-- rafamadriz/friendly-snippets
+- [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets): Set of preconfigured snippets for different languages
 
-- onecentlin/laravel-blade-snippets-vscode
+- [onecentlin/laravel-blade-snippets-vscode](https://github.com/onecentlin/laravel-blade-snippets-vscode): Laravel blade snippets and syntax highlight support for Visual Studio Code
 
-- onecentlin/laravel5-snippets-vscode
+- [onecentlin/laravel5-snippets-vscode](https://github.com/onecentlin/laravel5-snippets-vscode): Laravel snippets for Visual Studio Code (Support Laravel 5 and above)
 
 ## ZSH
 
