@@ -2,10 +2,9 @@ local saga = require 'lspsaga'
 
 local keymap = vim.keymap.set
 
-saga.init_lsp_saga({
-    border_style = "rounded",
-    diagnostic_header = { " ", " ", " ", "ﴞ " },
-    code_action_icon = ""
+saga.setup({
+    symbol_in_winbar = { enable = false },
+    ui = { theme = 'round', border = 'solid' }
 })
 
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", { silent = true })
@@ -17,9 +16,6 @@ keymap({ "n", "v" }, "ca", "<cmd>Lspsaga code_action<CR>", { silent = true })
 keymap("n", "<leader>gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 
 -- Peek Definition
--- you can edit the definition file in this flaotwindow
--- also support open/vsplit/etc operation check definition_action_keys
--- support tagstack C-t jump back
 keymap("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
 -- Show line diagnostics
@@ -54,10 +50,7 @@ keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { silent = true })
 keymap("n", "<leader>K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 
 -- Float terminal
--- keymap("n", "<S-o>", "<cmd>Lspsaga open_floaterm<CR>", { silent = true })
--- if you want to pass some cli command into a terminal you can do it like this
--- open lazygit in lspsaga float terminal
-keymap("n", "<C-s>d", "<cmd>Lspsaga open_floaterm lazygit<CR>", { silent = true })
+keymap("n", "<C-s>d", "<cmd>Lspsaga term_toggle lazygit<CR>", { silent = true })
 -- close floaterm
-keymap("t", "<C-s>p", [[<C-\><C-n><cmd>Lspsaga close_floaterm<CR>]],
+keymap("t", "<C-s>p", [[<C-\><C-n><cmd>Lspsaga term_toggle<CR>]],
     { silent = true })
