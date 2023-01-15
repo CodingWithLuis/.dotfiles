@@ -101,6 +101,8 @@ return require('packer').startup(function(use)
     use { "nvim-telescope/telescope-file-browser.nvim" }
     use { 'nvim-telescope/telescope-ui-select.nvim' }
 
+    use { 'stevearc/dressing.nvim' }
+
     use 'nvim-lualine/lualine.nvim'
 
     use 'lukas-reineke/indent-blankline.nvim'

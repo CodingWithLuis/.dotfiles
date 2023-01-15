@@ -73,6 +73,7 @@ map.set('n', '<C-G>', builtin.git_files, {})
 map.set('n', '<leader>fg', builtin.live_grep, {})
 map.set('n', '<leader>ob', builtin.buffers, {})
 map.set('n', '<leader>ht', builtin.help_tags, {})
+map.set('n', 'tk', builtin.keymaps, {})
 map.set('n', '<leader>ps',
     function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end,
     {})
