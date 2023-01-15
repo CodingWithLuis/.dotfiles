@@ -99,6 +99,12 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [Kibadda/laravel-docs.nvim](https://github.com/Kibadda/laravel-docs.nvim): A telescope.nvim extension that offers Laravel documentation shortcuts
 
+### Flutter
+
+- [akinsho/flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim): Tools to help create flutter apps in neovim using the native lsp
+- [dart-lang/dart-vim-plugin](https://github.com/dart-lang/dart-vim-plugin): Syntax highlighting for Dart in Vim
+- [Nash0x7E2/awesome-flutter-snippets](https://github.com/Nash0x7E2/awesome-flutter-snippets): Awesome Flutter Snippets is a collection snippets and shortcuts for commonly used Flutter functions and classes
+
 ### Markdown
 
 - [iamcco/mardown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim): markdown preview plugin for (neo)vim
