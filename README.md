@@ -15,6 +15,7 @@
   - [Sessions](#sessions)
   - [Testing](#testing)
   - [Laravel (PHP Framework)](#laravel-php-framework)
+  - [Flutter](#flutter)
   - [Markdown](#markdown)
   - [Manage Projects](#manage-projects)
   - [Fuzzy Finder](#fuzzy-finder)

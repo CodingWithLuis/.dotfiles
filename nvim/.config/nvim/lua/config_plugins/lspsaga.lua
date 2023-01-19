@@ -18,6 +18,9 @@ keymap("n", "<leader>gr", "<cmd>Lspsaga rename<CR>", { silent = true })
 -- Peek Definition
 keymap("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", { silent = true })
 
+-- Go to Definition
+keymap("n", "gD", "<cmd>Lspsaga goto_definition<CR>")
+
 -- Show line diagnostics
 keymap("n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<CR>",
     { silent = true })
