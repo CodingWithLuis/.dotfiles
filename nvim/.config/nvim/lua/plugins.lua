@@ -1,18 +1,25 @@
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-
-if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({
-        'git', 'clone', '--depth', '1',
-        'https://github.com/wbthomason/packer.nvim', install_path
-    })
+local ensure_packer = function()
+    local fn = vim.fn
+    local install_path = fn.stdpath('data') ..
+        '/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({
+            'git', 'clone', '--depth', '1',
+            'https://github.com/wbthomason/packer.nvim', install_path
+        })
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
 end
 
-return require('packer').startup(function(use)
+local packer_bootstrap = ensure_packer()
+
+local packer = require('packer')
+
+return packer.startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-
-    use 'ThePrimeagen/vim-be-good'
 
     use 'Murtaza-Udaipurwala/gruvqueen'
 
@@ -100,6 +107,36 @@ return require('packer').startup(function(use)
     use 'nvim-telescope/telescope.nvim'
     use { "nvim-telescope/telescope-file-browser.nvim" }
     use { 'nvim-telescope/telescope-ui-select.nvim' }
+    use {
+        "rest-nvim/rest.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
+        ft = 'http',
+        config = function()
+            require('rest-nvim').setup({
+                result_split_horizontal = false,
+                result_split_in_place = false,
+                skip_ssl_verification = false,
+                encode_url = true,
+                highlight = { enabled = true, timeout = 150 },
+                result = {
+                    show_url = true,
+                    show_http_info = true,
+                    show_headers = true,
+                    formatters = {
+                        json = "jq",
+                        html = function(body)
+                            return vim.fn
+                                .system({ "tidy", "-i", "-q", "-" }, body)
+                        end
+                    }
+                },
+                jump_to_request = false,
+                env_file = '.env',
+                custom_dynamic_variables = {},
+                yank_dry_run = true
+            })
+        end
+    }
 
     use { 'stevearc/dressing.nvim' }
 
@@ -113,12 +150,14 @@ return require('packer').startup(function(use)
 
     use { 'numToStr/Comment.nvim' }
 
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons' -- optional, for file icons
-        }
-    }
+    use { 'nvim-tree/nvim-web-devicons' }
+
+    -- use {
+    --     'nvim-tree/nvim-tree.lua',
+    --     requires = {
+    --         'nvim-tree/nvim-web-devicons' -- optional, for file icons
+    --     }
+    -- }
 
     use({
         "aserowy/tmux.nvim",

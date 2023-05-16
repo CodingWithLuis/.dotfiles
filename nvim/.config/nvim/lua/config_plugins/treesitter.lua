@@ -7,7 +7,7 @@ require 'nvim-treesitter.configs'.setup {
     indent = { enable = false, disable = {} },
     autotag = { enable = true },
     ensure_installed = {
-        "php", "json", "yaml", "html", "css", "vue", "typescript", "lua"
+        "php", "json", "yaml", "html", "css", "vue", "typescript", "lua", "http"
     },
     context_commentstring = {
         enable = true,

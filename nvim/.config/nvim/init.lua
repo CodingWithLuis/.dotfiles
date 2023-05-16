@@ -7,7 +7,12 @@ local fn = vim.fn -- to call Vim functions e.g. fn.bufnr()
 local g = vim.g -- a table to access global variables
 local opt = vim.opt -- to set options
 
-lua = require 'plugins'
+-- lua = require('plugins')
+--
+require('plugins')
+
+vim.opt.runtimepath:append('/home/envy/.config/nvim/lua')
+vim.opt.runtimepath:append('/home/envy/.config/nvim/lua/config_plugins/')
 
 require('config_plugins.lualine')
 require('config_plugins.lspsaga')
@@ -27,6 +32,7 @@ require('config_plugins.sumneko_lua')
 require('mappings.general')
 require('mappings.fugitive')
 require('config_plugins.comment')
+--require('config_plugins.rest')
 
 require("indent_blankline").setup {
     space_char_blankline = " ",
@@ -45,7 +51,6 @@ require("luasnip/loaders/from_vscode").lazy_load()
 require 'luasnip'.filetype_extend("php", { "blade" })
 
 g.completion_trigger_character = '<Tab>'
--- cmd 'au BufWritePre *.dart :DartFmt'
 
 vim.cmd [[
 let g:python4_host_prog = "/usr/bin/python"

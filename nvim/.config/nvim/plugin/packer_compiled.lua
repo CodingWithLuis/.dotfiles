@@ -180,6 +180,11 @@ _G.packer_plugins = {
     path = "/home/envy/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["larago.nvim"] = {
+    loaded = true,
+    path = "/home/envy/.local/share/nvim/site/pack/packer/start/larago.nvim",
+    url = "https://github.com/ccaglak/larago.nvim"
+  },
   ["laravel-blade-snippets-vscode"] = {
     loaded = true,
     path = "/home/envy/.local/share/nvim/site/pack/packer/start/laravel-blade-snippets-vscode",
@@ -312,6 +317,14 @@ _G.packer_plugins = {
     path = "/home/envy/.local/share/nvim/site/pack/packer/start/refactoring.nvim",
     url = "https://github.com/ThePrimeagen/refactoring.nvim"
   },
+  ["rest.nvim"] = {
+    config = { "\27LJ\2\n>\0\1\5\0\4\0\0066\1\0\0009\1\1\0019\1\2\0015\3\3\0\18\4\0\0D\1\3\0\1\5\0\0\ttidy\a-i\a-q\6-\vsystem\afn\bvimî\2\1\0\6\0\r\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0005\4\a\0003\5\b\0=\5\t\4=\4\n\3=\3\v\0024\3\0\0=\3\f\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\15formatters\thtml\0\1\0\1\tjson\ajq\1\0\3\19show_http_info\2\17show_headers\2\rshow_url\2\14highlight\1\0\2\ftimeout\3–\1\fenabled\2\1\0\a\26skip_ssl_verification\1\15encode_url\2\17yank_dry_run\2\26result_split_in_place\1\renv_file\t.env\28result_split_horizontal\1\20jump_to_request\1\nsetup\14rest-nvim\frequire\0" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/envy/.local/share/nvim/site/pack/packer/opt/rest.nvim",
+    url = "https://github.com/rest-nvim/rest.nvim"
+  },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
     path = "/home/envy/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
@@ -347,11 +360,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/envy/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/jiaoshijie/undotree"
-  },
-  ["vim-be-good"] = {
-    loaded = true,
-    path = "/home/envy/.local/share/nvim/site/pack/packer/start/vim-be-good",
-    url = "https://github.com/ThePrimeagen/vim-be-good"
   },
   ["vim-composer"] = {
     loaded = true,
@@ -427,8 +435,14 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType http ++once lua require("packer.load")({'rest.nvim'}, { ft = "http" }, _G.packer_plugins)]]
 vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
+vim.cmd [[augroup filetypedetect]]
+time([[Sourcing ftdetect script at: /home/envy/.local/share/nvim/site/pack/packer/opt/rest.nvim/ftdetect/http.vim]], true)
+vim.cmd [[source /home/envy/.local/share/nvim/site/pack/packer/opt/rest.nvim/ftdetect/http.vim]]
+time([[Sourcing ftdetect script at: /home/envy/.local/share/nvim/site/pack/packer/opt/rest.nvim/ftdetect/http.vim]], false)
 vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
