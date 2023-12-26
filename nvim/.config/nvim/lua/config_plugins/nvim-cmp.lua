@@ -62,14 +62,14 @@ local on_attach = function(client, bufnr)
 
     local on_action = vim.lsp.handlers["textDocument/codeAction"]
     vim.lsp.handlers["textDocument/codeAction"] =
-    vim.lsp.with(on_action, { loclist = true })
+        vim.lsp.with(on_action, { loclist = true })
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] =
-    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = true,
-        -- This sets the spacing and the prefix, obviously.
-        virtual_text = { spacing = 4, prefix = '' }
-    })
+        vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+            underline = true,
+            -- This sets the spacing and the prefix, obviously.
+            virtual_text = { spacing = 4, prefix = '' }
+        })
 
     local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
@@ -124,7 +124,8 @@ null_ls.setup({
         null_ls.builtins.formatting.markdownlint,
         null_ls.builtins.diagnostics.proselint,
         null_ls.builtins.formatting.lua_format,
-        null_ls.builtins.formatting.dart_format
+        null_ls.builtins.formatting.dart_format,
+        null_ls.builtins.formatting.csharpier
     }
 })
 
@@ -161,7 +162,7 @@ local phpcs = require 'diagnosticls-configs.linters.phpcs'
 local phpstan = require 'diagnosticls-configs.linters.phpstan'
 local eslint = require 'diagnosticls-configs.linters.eslint'
 local prettier_linter =
-require 'diagnosticls-configs.formatters.prettier_eslint'
+    require 'diagnosticls-configs.formatters.prettier_eslint'
 
 dlsconfig.init { on_attach = on_attach }
 
@@ -183,7 +184,15 @@ nvim_lsp.tsserver.setup {
     }
 }
 
-nvim_lsp.html.setup { on_attach = on_attach, capabilities = capabilities }
+nvim_lsp.html.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "html" },
+    init_options = {
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = { css = true, javascript = true }
+    }
+}
 
 nvim_lsp.cssls.setup { capabilities = capabilities }
 
@@ -199,6 +208,8 @@ nvim_lsp.emmet_ls.setup {
 }
 
 nvim_lsp.marksman.setup {}
+
+nvim_lsp.csharp_ls.setup {}
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menu,menuone,noselect,noinsert'
@@ -281,7 +292,7 @@ cmp.setup {
         end
     },
     sources = {
-        { name = 'nvim_lsp' }, { name = 'luasnip' }, --{ name = 'vsnip' },
+        { name = 'nvim_lsp' }, { name = 'luasnip' }, -- { name = 'vsnip' },
         { name = 'path' }
     }
 

@@ -69,6 +69,7 @@
         "/home/envy/.local/share/nvim/site/pack/packer/start/playground/after",
         "/home/envy/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ/after",
         "/usr/share/vim/vimfiles",
-        "${3rd}/luassert/library"
+        "${3rd}/luassert/library",
+        "${3rd}/luv/library"
     ]
 }

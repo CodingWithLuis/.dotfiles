@@ -7,13 +7,14 @@ require 'nvim-treesitter.configs'.setup {
     indent = { enable = false, disable = {} },
     autotag = { enable = true },
     ensure_installed = {
-        "php", "json", "yaml", "html", "css", "vue", "typescript", "lua", "http"
+        "php", "json", "yaml", "html", "css", "vue", "typescript", "lua",
+        "http", "c_sharp"
     },
-    context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-        config = { blade = { __default = '{{-- %s --}}', comment = '// %s' } }
-    },
+    -- context_commentstring = {
+    --     enable = true,
+    --     enable_autocmd = false,
+    --     config = { blade = { __default = '{{-- %s --}}', comment = '// %s' } }
+    -- },
     refactor = {
         highlight_definitions = { enable = true },
         smart_rename = { enable = true, keymaps = { smart_rename = "grr" } }
@@ -66,7 +67,7 @@ require 'nvim-treesitter.configs'.setup {
     playground = {
         enable = true,
         disable = {},
-        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+        updatetime = 25,         -- Debounced time for highlighting nodes in the playground from source code
         persist_queries = false, -- Whether the query persists across vim sessions
         keybindings = {
             toggle_query_editor = 'o',

@@ -1,5 +1,5 @@
 -- local trouble = require("trouble.providers.telescope")
-local fb_actions = require "telescope".extensions.file_browser.actions
+local fb_actions = require"telescope".extensions.file_browser.actions
 
 local telescope = require("telescope")
 
@@ -14,12 +14,12 @@ telescope.setup {
     --     preview = { treesitter = true }
     -- },
     extensions = {
-        ["laravel-docs"] = {
-            version = "9.x", -- one of: "6.x", "7.x", "8.x", "9.x", "master"
-            preview = true, -- show telescope preview
-            preview_with_glow = true, -- use glow as telescope previewer
-            directory = "$HOME/.cache/laravel-docs" -- where to clone the laravel docs github repo
-        },
+        -- ["laravel-docs"] = {
+        --   version = "9.x", -- one of: "6.x", "7.x", "8.x", "9.x", "master"
+        --   preview = true, -- show telescope preview
+        --    preview_with_glow = true, -- use glow as telescope previewer
+        --    directory = "$HOME/.cache/laravel-docs" -- where to clone the laravel docs github repo
+        -- },
         file_browser = {
             theme = "ivy",
             hijack_netrw = true,
@@ -49,21 +49,21 @@ telescope.setup {
                 }
             }
         },
-        ["ui-select"] = { require("telescope.themes").get_dropdown {} }
+        ["ui-select"] = {require("telescope.themes").get_dropdown {}}
     }
 }
 
 require("telescope").load_extension "file_browser"
-require("telescope").load_extension "laravel-docs"
+-- require("telescope").load_extension "laravel-docs"
 require("telescope").load_extension("ui-select")
 
 local map = vim.keymap
 
 map.set("n", "<space>fb",
-    function() telescope.extensions.file_browser.file_browser({}) end,
-    { silent = true, noremap = true })
+        function() telescope.extensions.file_browser.file_browser({}) end,
+        {silent = true, noremap = true})
 
-map.set("n", "<Leader>ld", "<Cmd>Telescope laravel-docs<CR>")
+-- map.set("n", "<Leader>ld", "<Cmd>Telescope laravel-docs<CR>")
 
 -- local opts = {noremap.set = true, silent = true}
 local builtin = require("telescope.builtin")
@@ -75,8 +75,8 @@ map.set('n', '<leader>ob', builtin.buffers, {})
 map.set('n', '<leader>ht', builtin.help_tags, {})
 map.set('n', 'tk', builtin.keymaps, {})
 map.set('n', '<leader>ps',
-    function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end,
-    {})
+        function() builtin.grep_string({search = vim.fn.input("Grep > ")}) end,
+        {})
 
 -- Tressiter
 map.set('n', '<leader>ts', builtin.treesitter, {})
@@ -98,13 +98,13 @@ end)
 map.set('n', '<leader>fc', require("telescope").extensions.flutter.commands, {})
 
 map.set('n', '<leader>la',
-    require("config_plugins.telescope_custom").laravel_artisan, {})
+        require("config_plugins.telescope_custom").laravel_artisan, {})
 map.set('n', '<leader>lp',
-    require("config_plugins.telescope_custom").project_find, {})
+        require("config_plugins.telescope_custom").project_find, {})
 
 -- Sessions
 map.set('n', '<leader>ls', '<cmd>SessionManager load_session<cr>', {})
 map.set('n', '<leader>ds', '<cmd>SessionManager delete_session<cr>', {})
 map.set('n', '<leader>ll', '<cmd>SessionManager load_last_session<cr>', {})
-map.set('n', '<leader>;;', '<cmd>Telescope tmux sessions<cr>', { silent = true })
-map.set('n', 'cw', '<cmd>Telescope tmux windows<cr>', { silent = true })
+map.set('n', '<leader>;;', '<cmd>Telescope tmux sessions<cr>', {silent = true})
+map.set('n', 'cw', '<cmd>Telescope tmux windows<cr>', {silent = true})

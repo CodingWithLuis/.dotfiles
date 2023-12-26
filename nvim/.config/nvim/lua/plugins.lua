@@ -14,11 +14,9 @@ local ensure_packer = function()
 end
 
 local packer_bootstrap = ensure_packer()
-
 local packer = require('packer')
 
 return packer.startup(function(use)
-    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
     use 'Murtaza-Udaipurwala/gruvqueen'
@@ -29,7 +27,8 @@ return packer.startup(function(use)
     use { "williamboman/mason.nvim" }
     use "williamboman/mason-lspconfig.nvim"
 
-    use('jose-elias-alvarez/null-ls.nvim')
+    use('nvimtools/none-ls.nvim')
+
     use('MunifTanjim/prettier.nvim')
 
     use { 'glepnir/lspsaga.nvim' }
@@ -40,7 +39,7 @@ return packer.startup(function(use)
         "gbprod/phpactor.nvim",
         requires = {
             "nvim-lua/plenary.nvim", -- required to update phpactor
-            "neovim/nvim-lspconfig" -- required to automaticly register lsp serveur
+            "neovim/nvim-lspconfig"  -- required to automaticly register lsp serveur
         }
     })
 
@@ -62,7 +61,13 @@ return packer.startup(function(use)
 
     use 'noahfrederick/vim-composer'
     use 'noahfrederick/vim-laravel'
-    use "Kibadda/laravel-docs.nvim"
+    -- use "Kibadda/laravel-docs.nvim"
+    --
+    use {
+        "max397574/colortils.nvim",
+        cmd = "Colortils",
+        config = function() require("colortils").setup() end
+    }
 
     use 'vim-test/vim-test'
 
@@ -99,7 +104,7 @@ return packer.startup(function(use)
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
+    use 'L3MON4D3/LuaSnip'         -- Snippets plugin
     use "rafamadriz/friendly-snippets"
     use 'onecentlin/laravel-blade-snippets-vscode'
     use 'onecentlin/laravel5-snippets-vscode'
@@ -170,6 +175,8 @@ return packer.startup(function(use)
         end
     })
 
+    use 'jlcrochet/vim-razor'
+
     use 'camgraff/telescope-tmux.nvim'
 
     -- markdown
@@ -181,6 +188,8 @@ return packer.startup(function(use)
     })
 
     use 'lewis6991/impatient.nvim'
+
+    use 'numToStr/FTerm.nvim'
 
     -- Git Integration
     use 'tpope/vim-fugitive'

@@ -32,23 +32,20 @@ require('config_plugins.sumneko_lua')
 require('mappings.general')
 require('mappings.fugitive')
 require('config_plugins.comment')
---require('config_plugins.rest')
+-- require('config_plugins.rest')
 
-require("indent_blankline").setup {
-    space_char_blankline = " ",
-    show_current_context = true
-    -- show_current_context_start = true,
-}
+require("ibl").setup {indent = {char = "|"}, scope = {enabled = false}}
 
-require 'hop'.setup()
+require'hop'.setup()
 require("telescope").load_extension('harpoon')
 require("telescope").load_extension("flutter")
 
 require('gitsigns').setup()
 require('refactoring').setup({})
+require('config_plugins.fterm')
 
 require("luasnip/loaders/from_vscode").lazy_load()
-require 'luasnip'.filetype_extend("php", { "blade" })
+require'luasnip'.filetype_extend("php", {"blade"})
 
 g.completion_trigger_character = '<Tab>'
 
@@ -77,7 +74,7 @@ require("gruvqueen").setup({
 })
 
 -- vim.api.nvim_set_hl(1, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(1, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(1, "NormalFloat", {bg = "none"})
 
 require("mason").setup({
     ui = {
