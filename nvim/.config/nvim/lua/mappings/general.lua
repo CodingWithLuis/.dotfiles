@@ -64,18 +64,6 @@ vim.api.nvim_set_keymap('n', '<C-left>', ':vertical resize -5<CR>',
 vim.api.nvim_set_keymap('n', '<C-up>', ':resize +5<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<C-down>', ':resize -5<CR>', { noremap = true })
 
--- Nvim-Tree file manager
--- vim.api.nvim_set_keymap('n', '<leader>nt', ':NvimTreeToggle<CR>',
---     { noremap = true })
--- vim.api.nvim_set_keymap('n', '<leader>ff', ':NvimTreeFindFile<CR>',
---     { noremap = true })
--- vim.api.nvim_set_keymap('n', '<leader>r', ':NvimTreeRefresh<CR>',
---     { noremap = true })
--- vim.api
---     .nvim_set_keymap('n', '<leader>ot', ':NvimTreeOpen<CR>', { noremap = true })
--- vim.api.nvim_set_keymap('n', '<leader>ct', ':NvimTreeClose<CR>',
---     { noremap = true })
-
 -- Prime
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -97,11 +85,3 @@ vim.keymap.set("n", "<leader>e", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<C-d>;", "<C-d>zz");
 vim.keymap.set("n", "<C-u>", "<C-u>zz");
 
-vim.keymap.set('n', ';rr', ":lua require('rest-nvim').run()<CR>",
-    { silent = true })
-
-vim.keymap.set('n', ';rl', ":lua require('rest-nvim').last()<CR>",
-    { silent = true })
-
-vim.keymap.set('n', ';rp', ":lua require('rest-nvim').run(true)<CR>",
-    { silent = true })

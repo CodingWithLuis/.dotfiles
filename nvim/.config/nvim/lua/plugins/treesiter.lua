@@ -1,0 +1,77 @@
+return {
+    "nvim-treesitter/nvim-treesitter",
+    version = false,
+    build = ":TSUpdate",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+        { "nvim-treesitter/nvim-treesitter-textobjects" },
+        { "nvim-treesitter/nvim-treesitter-refactor" },
+        { "nvim-treesitter/playground" },
+        { "windwp/nvim-ts-autotag" },
+    },
+    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
+    opts = {
+        highlight = { enable = true },
+        indent = { enable = true },
+        ensure_installed = {
+            "html",
+            "javascript",
+            "json",
+            "lua",
+            "markdown",
+            "python",
+            "typescript",
+            "vim",
+            "php",
+            "vue",
+        },
+        autotag = { enable = true },
+        incremental_selection = {
+            enable = true,
+            keymaps = {
+                init_selection = "<C-space>",
+                node_incremental = "<C-space>",
+                scope_incremental = false,
+                node_decremental = "<bs>",
+            },
+        },
+        refactor = {
+            highlight_definitions = { enable = true },
+            smart_name = { enable = true, keymaps = { smart_name = "grr" } }
+        },
+        textobjects = {
+            select = {
+                enable = true,
+                lookahead = true,
+                keymaps = {
+                    ["of"] = "@function.outer",
+                    ["if"] = "@function.inner",
+                    ["ob"] = "@block.outer",
+                    ["ib"] = "@block.inner",
+                    ["oc"] = "@class.outer",
+                    ["ic"] = {
+                        query = "@class.inner",
+                        desc = "Select inner part of a clss region"
+                    },
+                    ["op"] = "@parameter.outer",
+                    ["ip"] = "@parameter.inner",
+                    ["ol"] = "@loop.outer",
+                    ["il"] = "@loop.inner"
+                },
+            }
+        }
+    },
+    config = function(_, opts)
+        if type(opts.ensure_installed) == "table" then
+            local added = {}
+            opts.ensure_installed = vim.tbl_filter(function(lang)
+                if added[lang] then
+                    return false
+                end
+                added[lang] = true
+                return true
+            end, opts.ensure_installed)
+        end
+        require("nvim-treesitter.configs").setup(opts)
+    end,
+}
