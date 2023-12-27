@@ -4,9 +4,7 @@ return {
     keys = {
         {
             "<leader>xx",
-            function()
-                require('trouble').toggle()
-            end,
+            function() require('trouble').toggle() end,
             desc = "Toggle Trouble",
         },
         {

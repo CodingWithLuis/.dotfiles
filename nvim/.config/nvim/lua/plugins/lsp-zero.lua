@@ -26,18 +26,18 @@ return {
                 vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
                 vim.api.nvim_command [[augroup END]]
             end
-
-            local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-
-            for type, icon in pairs(signs) do
-                local hl = "DiagnosticSign" .. type
-                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-            end
         end)
+
+        lsp_zero.set_sign_icons({
+            error = " ",
+            warn = " ",
+            hint = " ",
+            info = " "
+        })
 
         require('mason').setup({})
         require('mason-lspconfig').setup({
-            ensure_installed = { 'phpactor', 'intelephense', 'vuels', 'tsserver', 'html', 'cssls', 'emmet_ls', 'csharp_ls' },
+            ensure_installed = { 'phpactor', 'intelephense', 'vuels', 'tsserver', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman' },
             handlers = {
                 lsp_zero.default_setup,
                 lua_ls = function()
