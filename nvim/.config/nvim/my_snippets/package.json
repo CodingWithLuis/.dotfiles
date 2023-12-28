@@ -1,0 +1,45 @@
+{
+  "name": "laravel-blade-snippets",
+  "version": "1.0.0",
+  "description": "Snippets for Laravel Blade and Neovim",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "laravel",
+    "blade",
+    "snippets",
+    "neovim"
+  ],
+  "author": "Luis Zelaya",
+  "license": "MIT",
+  "contributes": {
+		"snippets": [
+			{
+				"language": [
+					"blade"
+				],
+				"path": "./snippets/snipppets.json"
+			},
+			{
+				"language": [
+					"blade"
+				],
+				"path": "./snippets/blade.json"
+			},
+			{
+				"language": [
+					"blade"
+				],
+				"path": "./snippets/livewire.json"
+			},
+			{
+				"language": [
+					"blade"
+				],
+				"path": "./snippets/helpers.json"
+			}
+		]
+	}
+}

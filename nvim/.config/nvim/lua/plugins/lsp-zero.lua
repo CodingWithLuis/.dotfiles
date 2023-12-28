@@ -2,6 +2,7 @@ return {
     'VonHeikemen/lsp-zero.nvim',
     config = function()
         local lsp_zero = require('lsp-zero')
+        lsp_zero.extend_lspconfig()
 
         lsp_zero.on_attach(function(client, bufnr)
             local opts = { buffer = bufnr, remap = false, noremap = true, silent = true }
@@ -44,6 +45,31 @@ return {
                     local lua_opts = lsp_zero.nvim_lua_ls()
                     require('lspconfig').lua_ls.setup(lua_opts)
                 end,
+                intelephense = function()
+                    require('lspconfig').intelephense.setup({
+                        cmd = { "intelephense", "--stdio" },
+                        filetypes = { "php", "blade" },
+                        settings = {
+                            intelephense = {
+                                telemetry = { enabled = false },
+                                completion = { fullyQualifyGlobalConstantsAndFunctions = false },
+                                phpdoc = { returnVoid = false },
+                                files = {
+                                    associations = { "*.php", "*.blade.php" },
+                                    maxSize = 5000000,
+                                }
+                            }
+                        }
+                    })
+                end,
+                emmet_ls = function()
+                    require('lspconfig').emmet_ls.setup({
+                        filetypes = {
+                            'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss',
+                            'less', 'blade', 'blade.php'
+                        },
+                    })
+                end
             }
         })
 
@@ -89,6 +115,7 @@ return {
                 { name = 'luasnip' },
                 { name = 'nvim_lsp' },
                 { name = 'nvim_lua' },
+                --{ name = 'vsnip' },
             },
             formatting = {
                 format = function(entry, vim_item)

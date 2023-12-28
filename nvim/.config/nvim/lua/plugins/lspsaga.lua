@@ -8,9 +8,6 @@ return {
     opts = {
         symbol_in_winbar = { enable = false },
     },
-    config = function()
-        require('lspsaga').setup({})
-    end,
     dependencies = {
         'nvim-treesitter/nvim-treesitter',
         'nvim-tree/nvim-web-devicons'
