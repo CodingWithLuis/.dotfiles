@@ -36,6 +36,8 @@ return {
             info = " "
         })
 
+        require('lspconfig').texlab.setup({})
+
         require('mason').setup({})
         require('mason-lspconfig').setup({
             ensure_installed = { 'phpactor', 'intelephense', 'vuels', 'tsserver', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman' },
@@ -75,11 +77,6 @@ return {
                         filetypes = { 'vue' }
                     })
                 end,
-                -- texlab = function()
-                --     require('texlab').texlab.setup({
-                --         filetypes = { 'tex' }
-                --     })
-                -- end
             }
         })
 

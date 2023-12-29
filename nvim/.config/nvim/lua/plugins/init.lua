@@ -39,8 +39,6 @@ return {
     { 'hrsh7th/vim-vsnip' },
     { 'hrsh7th/vim-vsnip-integ' },
 
-    { 'latex-lsp/texlab' },
-
     'nvim-lua/plenary.nvim',
     {
         "JoosepAlviste/nvim-ts-context-commentstring",

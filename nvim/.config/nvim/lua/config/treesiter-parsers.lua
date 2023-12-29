@@ -17,6 +17,14 @@ parser_config.blade = {
     },
     filetype = "blade"
 }
+parser_config.tex = {
+    install_info = {
+        url = "https://github.com/latex-lsp/tree-sitter-latex",
+        files = { "src/parser.c" },
+        branch = "master"
+    },
+    filetype = "tex"
+}
 
 vim.filetype.add({
     pattern = {
