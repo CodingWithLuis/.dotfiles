@@ -44,8 +44,22 @@ return {
             handlers = {
                 lsp_zero.default_setup,
                 lua_ls = function()
-                    local lua_opts = lsp_zero.nvim_lua_ls()
-                    require('lspconfig').lua_ls.setup(lua_opts)
+                    require('lspconfig').lua_ls.setup({
+                        settings = {
+                            Lua = {
+                                runtime = {
+                                    version = 'LuaJIT'
+                                },
+                                diagnostics = {
+                                    globals = { 'vim' }
+                                },
+                                workspace = {
+                                    library = vim.api.nvim_get_runtime_file("", true)
+                                },
+                                telemetry = { enable = false }
+                            }
+                        }
+                    })
                 end,
                 intelephense = function()
                     require('lspconfig').intelephense.setup({
