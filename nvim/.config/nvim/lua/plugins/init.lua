@@ -24,7 +24,6 @@ return {
     },
     'tpope/vim-surround',
     { 'tpope/vim-repeat',                        event = "VeryLazy" },
-    { 'tpope/vim-dispatch',                      event = "VeryLazy" },
     { 'tpope/vim-projectionist',                 event = "VeryLazy" },
     { 'tpope/vim-fugitive',                      event = "VeryLazy" },
 
@@ -39,6 +38,8 @@ return {
     { 'hrsh7th/cmp-vsnip' },
     { 'hrsh7th/vim-vsnip' },
     { 'hrsh7th/vim-vsnip-integ' },
+
+    { 'latex-lsp/texlab' },
 
     'nvim-lua/plenary.nvim',
     {

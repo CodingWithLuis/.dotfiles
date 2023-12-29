@@ -69,7 +69,17 @@ return {
                             'less', 'blade', 'blade.php'
                         },
                     })
-                end
+                end,
+                vuels = function()
+                    require('lspconfig').vuels.setup({
+                        filetypes = { 'vue' }
+                    })
+                end,
+                -- texlab = function()
+                --     require('texlab').texlab.setup({
+                --         filetypes = { 'tex' }
+                --     })
+                -- end
             }
         })
 

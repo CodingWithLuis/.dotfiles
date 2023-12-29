@@ -10,33 +10,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = ' '
+vim.opt.termguicolors = true
 
 require("lazy").setup("plugins")
 require("mappings.general")
 require("mappings.fugitive")
+require("mappings.oil")
+require("mappings.harpoon")
+require("mappings.refactoring")
+require("config.treesiter-parsers")
 
-local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-parser_config.php = {
-    install_info = {
-        url = "https://github.com/tree-sitter/tree-sitter-php",
-        files = { "src/parser.c" },
-        branch = "master",
-        generate_requires_npm = false,
-        requires_generate_from_grammar = false,
-    },
-    filetype = "php",
-}
-parser_config.blade = {
-    install_info = {
-        url = "https://github.com/EmranMR/tree-sitter-blade",
-        files = { "src/parser.c" },
-        branch = "main",
-    },
-    filetype = "blade"
-}
-
-vim.filetype.add({
-    pattern = {
-        ['.*%.blade%.php'] = 'blade',
-    }
-})
+vim.g.gruvbox_baby_transparent_mode = 1
+vim.g.use_original_palette = true
+vim.cmd [[colorscheme gruvbox-baby]]
