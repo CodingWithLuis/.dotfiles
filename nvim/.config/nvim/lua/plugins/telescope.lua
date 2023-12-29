@@ -42,12 +42,32 @@ return
         { "<leader>so", "<cmd>Telescope vim_options<cr>",                              desc = "Options" },
         { "<leader>sR", "<cmd>Telescope resume<cr>",                                   desc = "Resume" },
         {
+            "<leader>ts",
+            function()
+                require('telescope.builtin').treesitter()
+            end,
+            desc = "Telescope treesitter"
+        },
+        {
             '<leader>ps',
             function()
                 require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
             end,
             desc = "Search on project"
-        }
+        },
+        {
+            '<leader>dd',
+            function()
+                require('telescope.builtin').git_files({
+                    prompt_title = "Dotfiles",
+                    cwd = "$HOME/.dotfiles",
+                    show_untracked = true
+                })
+            end,
+            desc = "Dotfiles"
+        },
+        { '<leader>;;', '<cmd>Telescope tmux sessions<cr>', desc = 'Telescope tmux sessions' },
+        { '<leader>cw', '<cmd>Telescope tmux windows<cr>',  desc = 'Telescope tmux windows' },
     },
     opts = function()
         local actions = require("telescope.actions")
