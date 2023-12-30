@@ -2,8 +2,11 @@
 return {
     "rest-nvim/rest.nvim",
     dependencies = { { "nvim-lua/plenary.nvim" } },
-    config = function()
-        require("rest-nvim").setup({
-        })
-    end
+    keys = {
+        { ';rr', ":lua require('rest-nvim').run()<CR>",    desc = "Run Rest Nvim" },
+
+        { ';rl', ":lua require('rest-nvim').last()<CR>",   desc = "Run Last Rest" },
+
+        { ';rp', ":lua require('rest-nvim').run(true)<CR>" },
+    }
 }

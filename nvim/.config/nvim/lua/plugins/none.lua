@@ -28,7 +28,9 @@ return {
                 null_ls.builtins.diagnostics.markdownlint,
                 null_ls.builtins.formatting.markdownlint,
                 null_ls.builtins.formatting.dart_format,
-                null_ls.builtins.formatting.csharpier
+                null_ls.builtins.formatting.csharpier,
+                null_ls.builtins.formatting.jq,
+
             }
         })
     end
