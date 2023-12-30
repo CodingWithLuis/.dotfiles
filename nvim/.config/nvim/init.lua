@@ -20,6 +20,7 @@ require("mappings.harpoon")
 require("mappings.refactoring")
 require("mappings.knap")
 require("config.treesiter-parsers")
+require("config.dap-adapters")
 
 vim.g.gruvbox_baby_transparent_mode = 1
 vim.g.use_original_palette = true
