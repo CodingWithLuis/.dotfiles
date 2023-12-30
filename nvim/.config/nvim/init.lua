@@ -18,6 +18,7 @@ require("mappings.fugitive")
 require("mappings.oil")
 require("mappings.harpoon")
 require("mappings.refactoring")
+require("mappings.knap")
 require("config.treesiter-parsers")
 
 vim.g.gruvbox_baby_transparent_mode = 1
