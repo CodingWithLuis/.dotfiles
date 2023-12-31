@@ -58,7 +58,7 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 ### Neovim Package Manager
 
-- [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim): Plugin Package Manager
+- [folke/lazy.nvim](https://github.com/folke/lazy.nvim): Plugin Package Manager
 
 ### Neovim Theme
 
@@ -72,9 +72,7 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim): Extension to mason.nvim that makes it easier to  -lspconfig with mason.nvim
 
-- [jose-elias-alvarez/null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim):  -Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-
-- [MunifTanjim/prettier.nvim](https://github.com/MunifTanjim/prettier.nvim): Prettier plugin for Neovim's built-in LSP client.
+- [nvimtools/none-ls.nvim](https://github.com/nvimtools/none-ls.nvim): Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 
 - [glepnir/lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim): A light-weight lsp plugin based on neovim's built-in lsp with a highly performant UI
 
@@ -98,7 +96,7 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [noahfrederick/vim-laravel](https://github.com/noahfrederick/vim-laravel): Vim support for Laravel/Lumen projects
 
-- [Kibadda/laravel-docs.nvim](https://github.com/Kibadda/laravel-docs.nvim): A telescope.nvim extension that offers Laravel documentation shortcuts
+- [adalessa/laravel.nvim](https://github.com/adalessa/laravel.nvim): Plugin for Neovim to work with laravel projects.
 
 ### Flutter
 
@@ -222,4 +220,4 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - I'm Luis Zelaya, I have passion for coding. I'm a web developer, right now focus on Laravel (PHP framework).
 - You can check my [Youtube Channel](https://www.youtube.com/channel/UCTzKyvZnQdpiVkBHG_udHFw)
-- Contact me: codewithluis_contactame@zohomail.com
+- Contact me: <codewithluis_contactame@zohomail.com>
