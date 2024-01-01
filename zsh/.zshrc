@@ -1,4 +1,5 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc. Initialization code that may require console input (password prompts, [y/n]
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -76,9 +77,18 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git laravel-sail laravel zsh-syntax-highlighting zsh-autosuggestions zsh-colorls)
+plugins=(git zsh-256color laravel-sail laravel zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+bindkey -v
+export KEYTIMEOUT=1
+
+bindkey -s '^f' 'nvim $(find . -mindepth 1 -maxdepth 3 -type f | fzf-tmux -p)\n'
+bindkey -s '^p' 'nvim $(find ~/code ~/Documentos -mindepth 1 -maxdepth 1 -type d | fzf-tmux -p) \n'
+
+bindkey -s '^d' 'ranger\n'
+
 
 # User configuration
 
@@ -93,13 +103,22 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-#
+
 #Use neovim with sudo by default
 export SUDO_EDITOR="nvim"
 alias "sudoedit"='function _sudoedit(){sudo -e "$1";};_sudoedit'
-alias fd=fdfind
 
-alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+alias lc='colorls'
+alias l='colorls -l'
+alias ll='colorls -lA'
+alias la='colorls -la'
+alias lt='colorls -lt'
+alias lS='colorls -lS'
+alias lr='colorls --tree=5'
+alias lx='colorls -lx'
+ 
+alias fd = fdfind
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -115,12 +134,38 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+export PATH="$PATH:$GEM_HOME/bin"
+
+# [[ -n $TMUX ]] && export TERM="xterm-256color"
 
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
-export PATH="$PATH:/home/kubuntu/flutter/bin"
-export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+# Enable fzf key binding
+if [ -x "$(command -v fzf)"  ]
+then
+  source /usr/share/fzf/key-bindings.zsh
+fi
+
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+
+# Using highlight (http://www.andre-simon.de/doku/highlight/en/highlight.html)
+# export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+
+export FZF_TMUX=1
+
+# Rust 
+source $HOME/.cargo/env 
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+export PATH="$PATH:$HOME/flutter/bin"
+
+export ANDROID_HOME="$HOME/Android"
 export PATH="$ANDROID_HOME/cmdline-tools/tools/bin:$PATH"
-export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/platforms:$PATH
+export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/cmdline-tools/tools:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/platforms:$PATH
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
