@@ -16,7 +16,7 @@
   - [Testing](#testing)
   - [Laravel (PHP Framework)](#laravel-php-framework)
   - [Flutter](#flutter)
-  - [Markdown](#markdown)
+  - [Markdown - Latex](#markdown-latex)
   - [Manage Projects](#manage-projects)
   - [Fuzzy Finder](#fuzzy-finder)
   - [GIT Integration](#git-integration)
@@ -54,7 +54,7 @@
 
 ## Neovim Setup
 
-Require [Neovim](https://neovim.io/) >=0.8
+Require [Neovim](https://neovim.io/) >=0.9
 
 ### Neovim Package Manager
 
@@ -104,9 +104,13 @@ Require [Neovim](https://neovim.io/) >=0.8
 - [dart-lang/dart-vim-plugin](https://github.com/dart-lang/dart-vim-plugin): Syntax highlighting for Dart in Vim
 - [Nash0x7E2/awesome-flutter-snippets](https://github.com/Nash0x7E2/awesome-flutter-snippets): Awesome Flutter Snippets is a collection snippets and shortcuts for commonly used Flutter functions and classes
 
-### Markdown
+### Markdown - Latex
 
-- [iamcco/mardown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim): markdown preview plugin for (neo)vim
+- [tadmccorkle/mardown.nvim](https://github.com/tadmccorkle/markdown.nvim): Markdown plugin for Neovim
+
+- [toppair/peek.nvim](https://github.com/toppair/peek.nvim):Markdown preview plugin for Neovim
+
+- [frabjous/knap](https://github.com/toppair/peek.nvim): Neovim plugin for creating live-updating-as-you-type previews of LaTeX, markdown, and other files in the viewer of your choice
 
 ### Manage Projects
 
@@ -162,7 +166,7 @@ Require [Neovim](https://neovim.io/) >=0.8
 
 - [tpope/vim-repeat](https://github.com/tpope/vim-repeat): Enable repeating supported plugin maps with "."
 
-- [LunarWatcher/auto-pairs](https://github.com/LunarWatcher/auto-pairs): Vim plugin, insert or delete brackets, parentheses, and quotes in pairs
+- [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs): Autopairs for Neovim written by lua
 
 - [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim): Indent guides for Neovim
 
