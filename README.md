@@ -16,7 +16,7 @@
   - [Testing](#testing)
   - [Laravel (PHP Framework)](#laravel-php-framework)
   - [Flutter](#flutter)
-  - [Markdown - Latex](#markdown-latex)
+  - [Markdown and Latex](#markdown-and-latex)
   - [Manage Projects](#manage-projects)
   - [Fuzzy Finder](#fuzzy-finder)
   - [GIT Integration](#git-integration)
@@ -104,11 +104,11 @@ Require [Neovim](https://neovim.io/) >=0.9
 - [dart-lang/dart-vim-plugin](https://github.com/dart-lang/dart-vim-plugin): Syntax highlighting for Dart in Vim
 - [Nash0x7E2/awesome-flutter-snippets](https://github.com/Nash0x7E2/awesome-flutter-snippets): Awesome Flutter Snippets is a collection snippets and shortcuts for commonly used Flutter functions and classes
 
-### Markdown - Latex
+### Markdown and Latex
 
 - [tadmccorkle/mardown.nvim](https://github.com/tadmccorkle/markdown.nvim): Markdown plugin for Neovim
 
-- [toppair/peek.nvim](https://github.com/toppair/peek.nvim):Markdown preview plugin for Neovim
+- [toppair/peek.nvim](https://github.com/toppair/peek.nvim): Markdown preview plugin for Neovim
 
 - [frabjous/knap](https://github.com/toppair/peek.nvim): Neovim plugin for creating live-updating-as-you-type previews of LaTeX, markdown, and other files in the viewer of your choice
 

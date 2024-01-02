@@ -11,6 +11,7 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = ' '
 vim.opt.termguicolors = true
+vim.g.papyrus_viewer = 'zathura'
 
 require("lazy").setup("plugins")
 require("mappings.general")

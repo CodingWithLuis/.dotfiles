@@ -17,6 +17,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+POWERLEVEL9K_INSTANT_PROMPT=quiet
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -77,7 +79,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-256color laravel-sail laravel zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git zsh-256color laravel-sail laravel zsh-autosuggestions zsh-syntax-highlighting zsh-colorls)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -117,7 +119,7 @@ alias lS='colorls -lS'
 alias lr='colorls --tree=5'
 alias lx='colorls -lx'
  
-alias fd = fdfind
+# alias fd = fdfind
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
