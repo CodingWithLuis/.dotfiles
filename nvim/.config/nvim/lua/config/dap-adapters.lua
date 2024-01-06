@@ -12,8 +12,7 @@ dap.configurations.php = {
         name = "Laravel",
         port = 9003,
         pathMappings = {
-            -- ["$HOME/code/"] = "${workspaceFolder}",
-            ["/home/vagrant/code/demo"] = "$HOME/code/demo"
+            ["/var/www/html"] = "${workspaceFolder}",
         },
     },
 }
