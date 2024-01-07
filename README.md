@@ -98,6 +98,8 @@ Require [Neovim](https://neovim.io/) >=0.9
 
 - [adalessa/laravel.nvim](https://github.com/adalessa/laravel.nvim): Plugin for Neovim to work with laravel projects.
 
+- [ccaglak/larago.nvim](https://github.com/ccaglak/larago.nvim): Neovim Laravel Goto - Blade/Components/Partials/Livewire
+
 ### Flutter
 
 - [akinsho/flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim): Tools to help create flutter apps in neovim using the native lsp
