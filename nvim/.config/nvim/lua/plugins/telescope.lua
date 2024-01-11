@@ -17,7 +17,7 @@ return
             "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
             desc = "Switch Buffer",
         },
-        { "<leader>h",  "<cmd>Telescope command_history<cr>",                          desc = "Command History" },
+        { "<leader>ch", "<cmd>Telescope command_history<cr>",                          desc = "Command History" },
         -- find
         { "<leader>fb", "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>", desc = "Buffers" },
         { "<leader>fr", "<cmd>Telescope oldfiles<cr>",                                 desc = "Recent" },
@@ -77,16 +77,6 @@ return
         end
         local open_selected_with_trouble = function(...)
             return require("trouble.providers.telescope").open_selected_with_trouble(...)
-        end
-        local find_files_no_ignore = function()
-            local action_state = require("telescope.actions.state")
-            local line = action_state.get_current_line()
-            Util.telescope("find_files", { no_ignore = true, default_text = line })()
-        end
-        local find_files_with_hidden = function()
-            local action_state = require("telescope.actions.state")
-            local line = action_state.get_current_line()
-            Util.telescope("find_files", { hidden = true, default_text = line })()
         end
 
         return {
