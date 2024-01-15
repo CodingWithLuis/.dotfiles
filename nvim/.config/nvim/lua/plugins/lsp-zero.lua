@@ -104,6 +104,9 @@ return {
                 phpactor = function()
                     require('lspconfig').phpactor.setup({})
                 end,
+                marksman = function()
+                    require('lspconfig').marksman.setup({})
+                end,
                 emmet_ls = function()
                     require('lspconfig').emmet_ls.setup({
                         filetypes = {
