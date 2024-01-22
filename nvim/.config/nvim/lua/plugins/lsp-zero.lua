@@ -61,6 +61,13 @@ return {
             capabilities = lsp_zero.get_capabilities(),
         })
 
+        local config = {
+            handlers = {
+                ["textDocument/definition"] = require('csharpls_extended').handler,
+                ["textDocument/typeDefinition"] = require('csharpls_extended').handler,
+            },
+        }
+
         require('mason').setup({})
         require('mason-lspconfig').setup({
             ensure_installed = { 'phpactor', 'intelephense', 'vuels', 'tsserver', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman' },
@@ -103,6 +110,9 @@ return {
                 end,
                 phpactor = function()
                     require('lspconfig').phpactor.setup({})
+                end,
+                csharp_ls = function()
+                    require 'lspconfig'.csharp_ls.setup(config)
                 end,
                 marksman = function()
                     require('lspconfig').marksman.setup({})
