@@ -19,7 +19,7 @@ return {
             "javascript",
             "json",
             "lua",
-            "markdown",
+            "markdown_inline",
             "python",
             "typescript",
             "vim",
@@ -30,10 +30,10 @@ return {
         incremental_selection = {
             enable = true,
             keymaps = {
-                init_selection = "<C-space>",
-                node_incremental = "<C-space>",
-                scope_incremental = false,
-                node_decremental = "<bs>",
+                init_selection = "gnn",
+                node_incremental = "grn",
+                scope_incremental = "grc",
+                node_decremental = "grm",
             },
         },
         refactor = {
@@ -92,5 +92,6 @@ return {
             end, opts.ensure_installed)
         end
         require("nvim-treesitter.configs").setup(opts)
+        require 'nvim-treesitter.install'.compilers = { 'zig' }
     end,
 }
