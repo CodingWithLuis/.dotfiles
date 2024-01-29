@@ -36,8 +36,6 @@ return {
             info = " "
         })
 
-        require('lspconfig').texlab.setup({})
-
         local lsp_config = require("lspconfig.configs")
         if not lsp_config.laravel_ls then
             lsp_config.laravel_ls = {
@@ -116,6 +114,9 @@ return {
                 end,
                 marksman = function()
                     require('lspconfig').marksman.setup({})
+                end,
+                texlab = function()
+                    require('lspconfig').texlab.setup({})
                 end,
                 emmet_ls = function()
                     require('lspconfig').emmet_ls.setup({
