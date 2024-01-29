@@ -31,7 +31,6 @@ return {
                 null_ls.builtins.formatting.csharpier,
                 null_ls.builtins.formatting.jq,
                 null_ls.builtins.formatting.latexindent,
-                null_ls.builtins.formatting.yq
             }
         })
     end
