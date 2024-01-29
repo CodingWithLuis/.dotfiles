@@ -25,6 +25,14 @@ parser_config.tex = {
     },
     filetype = "tex"
 }
+parser_config.markdown = {
+    install_info = {
+        url = 'https://github.com/MDeiml/tree-sitter-markdown',
+        branch = 'split_parser',
+        files = { 'src/parser.c', 'src/scanner.cc' },
+    },
+    filetype = 'markdown'
+}
 
 vim.filetype.add({
     pattern = {
