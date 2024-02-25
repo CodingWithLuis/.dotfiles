@@ -22,15 +22,10 @@ return {
                 end
             end,
             sources = {
-                null_ls.builtins.code_actions.eslint_d,
-                null_ls.builtins.diagnostics.eslint_d,
-                null_ls.builtins.formatting.eslint_d,
                 null_ls.builtins.diagnostics.markdownlint,
                 null_ls.builtins.formatting.markdownlint,
                 null_ls.builtins.formatting.dart_format,
                 null_ls.builtins.formatting.csharpier,
-                null_ls.builtins.formatting.jq,
-                null_ls.builtins.formatting.latexindent,
             }
         })
     end

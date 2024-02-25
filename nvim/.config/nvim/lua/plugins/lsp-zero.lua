@@ -68,7 +68,7 @@ return {
 
         require('mason').setup({})
         require('mason-lspconfig').setup({
-            ensure_installed = { 'phpactor', 'intelephense', 'vuels', 'tsserver', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman' },
+            ensure_installed = { 'phpactor', 'intelephense', 'vuels', 'tsserver', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman', 'jsonls', 'eslint' },
             handlers = {
                 lsp_zero.default_setup("laravel_ls"),
                 lua_ls = function()
@@ -108,6 +108,20 @@ return {
                 end,
                 phpactor = function()
                     require('lspconfig').phpactor.setup({})
+                end,
+                jsonls = function()
+                    require('lspconfig').jsonls.setup({})
+                end,
+                eslint = function()
+                    require('lspconfig').eslint.setup({
+                        cmd = { "vscode-eslint-language-server", "--stdio" },
+                        on_attach = function(client, bufnr)
+                            vim.api.nvim_create_autocmd("BufWritePre", {
+                                buffer = bufnr,
+                                command = "EslintFixAll",
+                            })
+                        end,
+                    })
                 end,
                 csharp_ls = function()
                     require 'lspconfig'.csharp_ls.setup(config)
