@@ -2,7 +2,7 @@ return {
     {
         "vhyrro/luarocks.nvim",
         config = function()
-            require("luarocks").setup({})
+            require("luarocks-nvim").setup({})
         end,
     },
     {
