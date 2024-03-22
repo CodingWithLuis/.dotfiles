@@ -36,29 +36,6 @@ return {
             info = " "
         })
 
-        local lsp_config = require("lspconfig.configs")
-        if not lsp_config.laravel_ls then
-            lsp_config.laravel_ls = {
-                default_config = {
-                    name = "laravel_ls",
-                    cmd = { vim.fn.expand("$HOME/.local/share/nvim/lazy/laravel-dev-tools/builds/laravel-dev-tools"), "lsp", "-vvv" },
-                    filetypes = { "blade" },
-                    root_dir = function(pattern)
-                        local util = require("lspconfig.util")
-                        local cwd = vim.loop.cwd()
-                        local root = util.root_pattern("composer.json", ".git", ".phpactor.json", ".phpactor.yml")(
-                            pattern)
-
-                        return util.path.is_descendant(cwd, root) and cwd or root
-                    end,
-                },
-            }
-        end
-
-        require("lspconfig").laravel_ls.setup({
-            capabilities = lsp_zero.get_capabilities(),
-        })
-
         local config = {
             handlers = {
                 ["textDocument/definition"] = require('csharpls_extended').handler,
@@ -70,7 +47,6 @@ return {
         require('mason-lspconfig').setup({
             ensure_installed = { 'phpactor', 'intelephense', 'vuels', 'tsserver', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman', 'jsonls', 'eslint' },
             handlers = {
-                lsp_zero.default_setup("laravel_ls"),
                 lua_ls = function()
                     require('lspconfig').lua_ls.setup({
                         settings = {
