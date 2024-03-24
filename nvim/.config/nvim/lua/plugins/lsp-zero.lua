@@ -88,6 +88,9 @@ return {
                 jsonls = function()
                     require('lspconfig').jsonls.setup({})
                 end,
+                tsserver = function()
+                    require('lspconfig').tsserver.setup({})
+                end,
                 eslint = function()
                     require('lspconfig').eslint.setup({
                         cmd = { "vscode-eslint-language-server", "--stdio" },
