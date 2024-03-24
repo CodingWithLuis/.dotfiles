@@ -1,9 +1,11 @@
 return {
     {
         "vhyrro/luarocks.nvim",
-        config = function()
-            require("luarocks-nvim").setup({})
-        end,
+        opts = {
+            rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" }
+        },
+        priority = 1000,
+        config = true,
     },
     {
         "rest-nvim/rest.nvim",
@@ -18,8 +20,7 @@ return {
                     {
                         "<leader>rl", "<cmd>Rest run last<cr>", "Re-run latest request",
                     },
-                },
-
+                }
             })
         end,
     }
