@@ -1,8 +1,13 @@
 return {
     'vim-test/vim-test',
-    keys = {
-        { "<leader>t", "<cmd>TestNearest<CR>", desc = "Test Nearest" },
-        { "<leader>T", "<cmd>TestFile<CR>",    desc = "Test File" },
+    dependencies = {
+        'preservim/vimux'
     },
-    opts = {}
+    vim.keymap.set('n', "<leader>t", ":TestNearest<CR>"),
+    vim.keymap.set('n', "<leader>T", ":TestFile<CR>"),
+    opts = {},
+    config = function()
+
+    end,
+    vim.cmd("let test#strategy = 'vimux'")
 }
