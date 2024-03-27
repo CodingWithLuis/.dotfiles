@@ -105,6 +105,9 @@ return {
                 csharp_ls = function()
                     require 'lspconfig'.csharp_ls.setup(config)
                 end,
+                tailwindcss = function()
+                    require 'lspconfig'.tailwindcss.setup(config)
+                end,
                 marksman = function()
                     require('lspconfig').marksman.setup({})
                 end,
