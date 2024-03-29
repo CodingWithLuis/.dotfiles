@@ -10,7 +10,7 @@ shell:
   program: /usr/bin/tmux
 
 window:
-  opacity: 0.80
+  opacity: 0.60
   padding:
     x: 18
     y: 16
@@ -33,7 +33,7 @@ mouse:
 
 font:
   normal:
-    family: MesloLGS NF
+    family: JetBrains Mono
     style: Regular
   bold:
     family: MesloLGS NF
