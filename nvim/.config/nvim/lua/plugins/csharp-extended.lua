@@ -1,4 +1,4 @@
-return
-{
-    'Decodetalkers/csharpls-extended-lsp.nvim'
+return {
+    'Decodetalkers/csharpls-extended-lsp.nvim',
+    ft = { 'csharp' }
 }
