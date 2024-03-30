@@ -7,6 +7,7 @@ return {
         { "<leader>pc", "<CMD>lua require('peek').close()<CR>", desc = "Markdown Preview Stop" },
     },
     opts = {
-        app = 'browser'
+        app = 'browser',
+        update_on_change = true,
     }
 }
