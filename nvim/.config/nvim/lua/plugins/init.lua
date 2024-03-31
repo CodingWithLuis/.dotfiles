@@ -23,17 +23,17 @@ return {
         },
     },
     'tpope/vim-surround',
-    { 'tpope/vim-repeat',                        event = "VeryLazy" },
-    { 'tpope/vim-projectionist',                 event = "VeryLazy" },
-    { 'tpope/vim-fugitive',                      event = "VeryLazy" },
+    { 'tpope/vim-repeat',                         event = "VeryLazy" },
+    { 'tpope/vim-projectionist',                  event = "VeryLazy" },
+    { 'tpope/vim-fugitive',                       event = "VeryLazy" },
 
     { 'mhinz/vim-signify', },
 
     { 'noahfrederick/vim-composer' },
-    { 'noahfrederick/vim-laravel' },
+    { 'noahfrederick/vim-laravel',                ft = { 'php' } },
 
-    { 'onecentlin/laravel-blade-snippets-vscode' },
-    { 'onecentlin/laravel5-snippets-vscode' },
+    { 'onecentlin/laravel-blade-snippets-vscode', ft = { 'php' } },
+    { 'onecentlin/laravel5-snippets-vscode',      ft = { 'php' } },
 
     { 'hrsh7th/cmp-vsnip' },
     { 'hrsh7th/vim-vsnip' },
