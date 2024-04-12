@@ -45,7 +45,7 @@ return {
 
         require('mason').setup({})
         require('mason-lspconfig').setup({
-            ensure_installed = { 'phpactor', 'intelephense', 'vuels', 'tsserver', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman', 'jsonls', 'eslint' },
+            ensure_installed = { 'phpactor', 'intelephense', 'volar', 'tsserver', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman', 'jsonls', 'eslint' },
             handlers = {
                 lua_ls = function()
                     require('lspconfig').lua_ls.setup({
@@ -122,9 +122,8 @@ return {
                         },
                     })
                 end,
-                vuels = function()
-                    require('lspconfig').vuels.setup({
-                        filetypes = { 'vue' }
+                volar = function()
+                    require('lspconfig').volar.setup({
                     })
                 end,
             }
