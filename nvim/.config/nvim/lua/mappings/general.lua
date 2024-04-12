@@ -38,13 +38,13 @@ opt.cursorline = true
 vim.api.nvim_set_keymap('n', '<C-a>', 'gg<S-v>G', { noremap = true })
 
 -- Save and Quit Neovim
-vim.api.nvim_set_keymap('n', '<C-W>', ':write<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-q>', ':q<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-W>', '<CMD>write<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-q>', '<CMD>q<CR>', { noremap = true })
 
 -- Buffers
-vim.api.nvim_set_keymap('n', '<C-x>', ':bdelete<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>nb', ':bNext<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>pb', ':bprevious<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-x>', '<CMD>bdelete<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>nb', '<CMD>bNext<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>pb', '<CDM>bprevious<CR>', { noremap = true })
 
 -- Better window navigation
 vim.api.nvim_set_keymap('n', '<Left>', '<C-w>h', { noremap = true })
@@ -53,15 +53,15 @@ vim.api.nvim_set_keymap('n', '<Up>', '<C-w>k', { noremap = true })
 vim.api.nvim_set_keymap('n', '<Right>', '<C-w>l', { noremap = true })
 
 -- Splitting windows
-vim.api.nvim_set_keymap('n', '<leader>vs', ':vsplit<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>sh', ':split<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>vs', '<CMD>vsplit<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>sh', '<CMD>split<CR>', { noremap = true })
 
-vim.api.nvim_set_keymap('n', '<C-right>', ':vertical resize +5<CR>',
+vim.api.nvim_set_keymap('n', '<C-right>', '<CMD>vertical resize +5<CR>',
     { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-left>', ':vertical resize -5<CR>',
+vim.api.nvim_set_keymap('n', '<C-left>', '<CMD>vertical resize -5<CR>',
     { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-up>', ':resize +5<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<C-down>', ':resize -5<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-up>', '<CMD>resize +5<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-down>', '<CMD>resize -5<CR>', { noremap = true })
 
 -- Prime
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -84,6 +84,6 @@ vim.keymap.set("n", "<leader>e", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<C-d>;", "<C-d>zz");
 vim.keymap.set("n", "<C-u>", "<C-u>zz");
 
-vim.keymap.set("n", "<leader>ee", ":vsplit .env<CR>");
+vim.keymap.set("n", "<leader>ee", "<CMD>vsplit .env<CR>");
 
 vim.g.VimuxHeight = 35;
