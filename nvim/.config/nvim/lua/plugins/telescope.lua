@@ -45,6 +45,7 @@ return
         { "<leader>sm", "<cmd>Telescope marks<cr>",                     desc = "Jump to Mark" },
         { "<leader>so", "<cmd>Telescope vim_options<cr>",               desc = "Options" },
         { "<leader>sR", "<cmd>Telescope resume<cr>",                    desc = "Resume" },
+        { "<leader>lg", "<cmd>Telescope live_grep<cr>",                 desc = "Grep search" },
         {
             "<leader>ts",
             function()
