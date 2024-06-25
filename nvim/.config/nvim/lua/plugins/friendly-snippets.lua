@@ -1,6 +1,4 @@
 return {
-    {
-        "rafamadriz/friendly-snippets",
-        event = "InsertEnter",
-    },
+    "rafamadriz/friendly-snippets",
+    event = "InsertEnter",
 }
