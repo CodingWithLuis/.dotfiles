@@ -1,0 +1,44 @@
+live_config_reload = true
+
+[env]
+TERM = "tmux-256color"
+
+[shell]
+program = "/usr/bin/tmux"
+
+[window.padding]
+x = 15
+y = 15
+
+[window]
+decorations = 'None'
+startup_mode = "Maximized"
+opacity = 0.75
+dynamic_padding = false
+
+[font]
+normal = { family = "JetBrains Mono", style = "Regular" }
+bold = { family = "MesloLGS NF", style = "Bold" }
+italic = { family = "MesloLGS NF", style = "Italic" }
+size = 14
+
+[colors.normal]
+black = '0x000000'
+red = '0xfe0100'
+green = '0x33ff00'
+yellow = '0xfeff00'
+blue = '0x0066ff'
+magenta = '0xcc00ff'
+cyan = '0x00ffff'
+white = '0xd0d0d0'
+
+[colors.bright]
+black = '0x808080'
+red = '0xfe0100'
+green = '0x33ff00'
+yellow = '0xfeff00'
+blue = '0x0066ff'
+magenta = '0xcc00ff'
+cyan = '0x00ffff'
+white = '0xFFFFFF'
+
