@@ -22,6 +22,7 @@ return {
             "xml",
             "http",
             "graphql",
+            "markdown",
             "markdown_inline",
             "python",
             "typescript",
