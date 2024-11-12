@@ -44,9 +44,17 @@ return {
         }
 
         require('mason').setup({})
+
         require('mason-lspconfig').setup({
-            ensure_installed = { 'phpactor', 'intelephense', 'volar', 'tsserver', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman', 'jsonls', 'eslint' },
+            ensure_installed = { 'phpactor', 'intelephense', 'volar', 'ts_ls', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman', 'jsonls', 'eslint' },
             handlers = {
+                function(server_name)
+                    if server_name == 'tsserver' then
+                        server_name = 'ts_ls'
+                    else
+                        lsp_zero.default_setup(server_name)
+                    end
+                end,
                 lua_ls = function()
                     require('lspconfig').lua_ls.setup({
                         settings = {
@@ -88,8 +96,23 @@ return {
                 jsonls = function()
                     require('lspconfig').jsonls.setup({})
                 end,
-                tsserver = function()
-                    require('lspconfig').tsserver.setup({})
+                ts_ls = function()
+                    require('lspconfig').ts_ls.setup({
+                        -- init_options = {
+                        --     plugins = {
+                        --         {
+                        --             name = "@vue/typescript-plugin",
+                        --             location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
+                        --             languages = { "javascript", "typescript", "vue" },
+                        --         },
+                        --     },
+                        -- },
+                        -- filetypes = {
+                        --     "javascript",
+                        --     "typescript",
+                        --     "vue",
+                        -- },
+                    })
                 end,
                 eslint = function()
                     require('lspconfig').eslint.setup({
@@ -127,6 +150,20 @@ return {
                     })
                 end,
             }
+        })
+
+        require("mason-lspconfig").setup_handlers({
+            --
+            function(server_name) -- default handler (optional)
+                -- https://github.com/neovim/nvim-lspconfig/pull/3232
+                if server_name == "tsserver" then
+                    server_name = "ts_ls"
+                end
+                local capabilities = require("cmp_nvim_lsp").default_capabilities()
+                require("lspconfig")[server_name].setup({
+                    capabilities = capabilities,
+                })
+            end,
         })
 
         local cmp = require('cmp')
