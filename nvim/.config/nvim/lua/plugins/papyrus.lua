@@ -4,6 +4,5 @@ return {
         { "<leader>pcp", ":PapyrusCompile pdf --template eisvogel --highlight-style tango --number-sections<CR>" },
         { "<leader>pv",  ":PapyrusView<CR>" },
     },
-    ft = { 'tex', 'markdown' },
-    opts = {}
+    ft = { 'tex', 'markdown' }
 }
