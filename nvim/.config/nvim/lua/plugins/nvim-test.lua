@@ -8,5 +8,7 @@ return {
         vim.keymap.set('n', "<leader>T", ":TestFile<CR>"),
     },
     opts = {},
-    vim.cmd("let test#strategy = 'vimux'")
+    init = function()
+        vim.cmd("let test#strategy = 'vimux'")
+    end
 }

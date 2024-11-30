@@ -1,4 +1,4 @@
 return {
     "rafamadriz/friendly-snippets",
-    event = "InsertEnter",
+    event = "InsertEnter"
 }

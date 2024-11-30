@@ -27,5 +27,5 @@ vim.g.gruvbox_baby_transparent_mode = 1
 vim.g.use_original_palette = true
 vim.cmd [[colorscheme gruvbox-baby]]
 
-local ft = require('Comment.ft')
-ft.set('blade', { '{{--%s--}}', '{{--%s--}}' })
+-- local ft = require('Comment.ft')
+-- ft.set('blade', { '{{--%s--}}', '{{--%s--}}' })
