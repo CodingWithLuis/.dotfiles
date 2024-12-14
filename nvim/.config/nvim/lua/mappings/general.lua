@@ -87,3 +87,13 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz");
 vim.keymap.set("n", "<leader>ee", "<CMD>vsplit .env<CR>");
 
 vim.g.VimuxHeight = 35;
+
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false
+
+-- Keymap to switch spelling language to both spanish and english lamw25wmal
+vim.keymap.set("n", "<leader>ms", function()
+    vim.opt.spelllang = "en,es"
+    vim.cmd("echo 'Spell language set to Spanish and English'")
+end, { desc = "[P]Spelling language Spanish and English" })
