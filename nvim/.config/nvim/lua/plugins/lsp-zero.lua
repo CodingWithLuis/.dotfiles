@@ -46,7 +46,7 @@ return {
         require('mason').setup({})
 
         require('mason-lspconfig').setup({
-            ensure_installed = { 'phpactor', 'intelephense', 'volar', 'ts_ls', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman', 'jsonls', 'eslint' },
+            ensure_installed = { 'phpactor', 'intelephense', 'volar', 'ts_ls', 'html', 'cssls', 'emmet_ls', 'csharp_ls', 'tailwindcss', 'marksman', 'jsonls', 'eslint', 'lua_ls' },
             handlers = {
                 function(server_name)
                     if server_name == 'tsserver' then
