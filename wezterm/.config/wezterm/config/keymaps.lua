@@ -27,6 +27,7 @@ function module.apply_to_config(config)
         -- Zoom Pane
         { key = "Enter", mods = "CTRL|SHIFT", action = "TogglePaneZoomState" },
 
+        --resize panes with key table
         {
             key = 'r',
             mods = 'LEADER',
@@ -34,7 +35,25 @@ function module.apply_to_config(config)
                 name = 'resize_pane', one_shot = false, timeout_milliseconds = 1000,
             }
         },
+
+        --move tabs with key table
+        {
+            key = "m",
+            mods = "LEADER",
+            action = act.ActivateKeyTable {
+                name = "move_tab",
+                one_shot = false,
+                timeout_milliseconds = 1000, }
+        },
     }
+
+    for i = 1, 9 do
+        table.insert(config.keys, {
+            key = tostring(i),
+            mods = "LEADER",
+            action = act.ActivateTab(i - 1)
+        })
+    end
 
     config.key_tables = {
         resize_pane = {
