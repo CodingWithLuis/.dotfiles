@@ -28,8 +28,21 @@ function module.apply_to_config(config)
         }
     }
 
-    config.window_decorations = "RESIZE"
+    config.window_decorations = "NONE"
     config.hide_tab_bar_if_only_one_tab = true
+    config.enable_wayland = false
+    config.window_padding = {
+        left = 0,
+        right = 0,
+        top = 0,
+        bottom = 0,
+    }
+
+    wezterm.on('format-tab-title', function(tab, tabs, panes, config, hover, max_width)
+        local title = tab.active_pane.title
+        local basename = string.match(title, "[^/]+$") or title
+        return basename
+    end)
 end
 
 return module
