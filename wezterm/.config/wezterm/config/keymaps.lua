@@ -3,7 +3,7 @@ local act = wezterm.action
 local module = {}
 
 function module.apply_to_config(config)
-    config.leader = { key = 'a', mods = 'CTRL' }
+    config.leader = { key = 's', mods = 'CTRL' }
 
     config.keys = {
         -- Split panes
