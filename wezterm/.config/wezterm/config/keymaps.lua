@@ -7,18 +7,30 @@ function module.apply_to_config(config)
 
     config.keys = {
         -- Split panes
-        { key = "h",     mods = "LEADER",     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
-        { key = "v",     mods = "LEADER",     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
+        { key = "h", mods = "LEADER",     action = act.SplitHorizontal { domain = "CurrentPaneDomain" } },
+        { key = "v", mods = "LEADER",     action = act.SplitVertical { domain = "CurrentPaneDomain" } },
 
         -- Switch panes
-        { key = "h",     mods = "ALT",        action = act.ActivatePaneDirection("Left") },
-        { key = "l",     mods = "ALT",        action = act.ActivatePaneDirection("Right") },
-        { key = "k",     mods = "ALT",        action = act.ActivatePaneDirection("Up") },
-        { key = "j",     mods = "ALT",        action = act.ActivatePaneDirection("Down") },
+        { key = "h", mods = "ALT",        action = act.ActivatePaneDirection("Left") },
+        { key = "l", mods = "ALT",        action = act.ActivatePaneDirection("Right") },
+        { key = "k", mods = "ALT",        action = act.ActivatePaneDirection("Up") },
+        { key = "j", mods = "ALT",        action = act.ActivatePaneDirection("Down") },
 
         -- Tabs
-        { key = "t",     mods = "CTRL|SHIFT", action = act.SpawnTab("CurrentPaneDomain") },
-        { key = "w",     mods = "CTRL|SHIFT", action = act.CloseCurrentTab { confirm = true } },
+        { key = "t", mods = "CTRL|SHIFT", action = act.SpawnTab("CurrentPaneDomain") },
+        { key = "w", mods = "CTRL|SHIFT", action = act.CloseCurrentTab { confirm = true } },
+        {
+            key = 'r',
+            mods = 'ALT',
+            action = act.PromptInputLine {
+                description = 'Enter new name for tab',
+                action = wezterm.action_callback(function(window, pane, line)
+                    if line then
+                        window:active_tab():set_title(line)
+                    end
+                end),
+            },
+        },
 
         -- Copy/Paste
         { key = "c",     mods = "CTRL|SHIFT", action = act.CopyTo("Clipboard") },
