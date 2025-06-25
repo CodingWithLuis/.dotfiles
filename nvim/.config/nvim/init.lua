@@ -14,11 +14,15 @@ vim.opt.termguicolors = true
 -- vim.g.papyrus_viewer = 'okular'
 vim.g.papyrus_latex_engine = 'pdflatex'
 
+vim.lsp.enable('luals')
+vim.lsp.enable('marksman')
+vim.lsp.enable('intelephense')
+
 require("lazy").setup("plugins")
 require("mappings.general")
 require("mappings.fugitive")
 require("mappings.oil")
--- require("mappings.harpoon")
+require("mappings.harpoon")
 require("config.treesiter-parsers")
 require("config.dap-adapters")
 require("config.telescope")
