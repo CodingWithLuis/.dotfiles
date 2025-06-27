@@ -1,9 +1,6 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -15,9 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-POWERLEVEL9K_INSTANT_PROMPT=quiet
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -89,8 +84,7 @@ export KEYTIMEOUT=1
 bindkey -s '^f' 'nvim $(find . -mindepth 1 -maxdepth 3 -type f | fzf-tmux -p)\n'
 bindkey -s '^p' 'nvim $(find ~/code ~/Documentos -mindepth 1 -maxdepth 1 -type d | fzf-tmux -p) \n'
 
-bindkey -s '^d' 'ranger\n'
-
+bindkey -s '^d' 'nvim $(find . -type d -print | fzf-tmux -p)\n'
 
 # User configuration
 
@@ -132,9 +126,8 @@ alias lx='colorls -lx'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#
+eval "$(starship init zsh)"
 
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
@@ -175,3 +168,10 @@ eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# Go path 
+#export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$(go env GOPATH)/bin
+
+# export PHPBREW_SET_PROMPT=1
+# [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
