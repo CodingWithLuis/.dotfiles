@@ -8,7 +8,7 @@ function module.apply_to_config(config)
     config.background = {
         {
             source = {
-                File = wezterm.config_dir .. "/backgrounds/urahara.jpg"
+                File = wezterm.config_dir .. "/backgrounds/pexels.jpg"
             },
             hsb = {
                 hue = 1.0,
