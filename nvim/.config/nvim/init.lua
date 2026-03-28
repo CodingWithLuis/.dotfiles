@@ -28,7 +28,10 @@ vim.lsp.enable('phpactor')
 vim.lsp.enable('jsonls')
 vim.lsp.enable('texlab')
 vim.lsp.enable('tailwindcss')
-vim.lsp.enable('ts_ls')
+
+local vtsls_config = require('lsp.vtsls')
+vim.lsp.config.vtsls = vtsls_config
+vim.lsp.enable('vtsls')
 vim.lsp.enable('vue_ls')
 
 local emmet_config = require('lsp.emmetls')
@@ -89,10 +92,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.diagnostic.config({
     signs = {
         text = {
-            [vim.diagnostic.severity.ERROR] = " ",
-            [vim.diagnostic.severity.WARN] = " ",
-            [vim.diagnostic.severity.HINT] = " ",
-            [vim.diagnostic.severity.INFO] = "  "
+            [vim.diagnostic.severity.ERROR] = " ",
+            [vim.diagnostic.severity.WARN]  = " ",
+            [vim.diagnostic.severity.HINT]  = "󰌵 ",
+            [vim.diagnostic.severity.INFO]  = " ",
         }
     }
 })
