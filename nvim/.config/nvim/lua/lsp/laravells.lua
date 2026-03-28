@@ -1,5 +1,5 @@
 return {
-    cmd = { '/home/envy/go/bin/laravel-ls' },
+    cmd = { '/home/luisz/go/bin/laravel-ls' },
     filetypes = { 'php', 'blade' },
     root_markers = { 'composer.json', 'artisan' },
     on_attach = function(client, bufnr)
