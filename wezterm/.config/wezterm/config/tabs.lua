@@ -33,6 +33,7 @@ local colors = {
 
 function module.apply_to_config(config)
     -- Tab bar settings
+    config.enable_tab_bar = false
     config.tab_bar_at_bottom = false
     config.use_fancy_tab_bar = true
     config.tab_max_width = 32
