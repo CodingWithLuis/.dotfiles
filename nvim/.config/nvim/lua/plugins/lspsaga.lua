@@ -3,7 +3,7 @@ return {
     keys = {
         { "<leader>ca", ":Lspsaga code_action<cr>" },
         { "<leader>gr", "<cmd>Lspsaga rename<cr>" },
-        { "<C-s>d",     "<cmd>Lspsaga term_toggle lazygit<CR>" },
+        { "<leader>lz", "<cmd>Lspsaga term_toggle lazygit<CR>" },
         { "<leader>o",  "<cmd>Lspsaga outline<cr>" },
     },
     event = { "VeryLazy" },
