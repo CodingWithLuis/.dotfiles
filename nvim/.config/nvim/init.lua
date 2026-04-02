@@ -48,7 +48,11 @@ local laravel_config = require('lsp.laravells')
 vim.lsp.config.laravel_ls = laravel_config
 vim.lsp.enable('laravel_ls')
 
-require("lazy").setup("plugins")
+require("lazy").setup({
+    spec = {
+        { import = "plugins" }
+    }
+})
 require("mappings.general")
 require("mappings.fugitive")
 require("mappings.oil")
