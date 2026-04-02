@@ -137,10 +137,10 @@ export PATH="$PATH:$GEM_HOME/bin"
 export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
 # Enable fzf key binding
-if [ -x "$(command -v fzf)"  ]
-then
-  source /usr/share/fzf/key-bindings.zsh
-fi
+# if [ -x "$(command -v fzf)"  ]
+# then
+#   source /usr/share/fzf/key-bindings.zsh
+# fi
 
 alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 
@@ -150,8 +150,8 @@ alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
 export FZF_TMUX=1
 
 # Rust 
-source $HOME/.cargo/env 
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+# source $HOME/.cargo/env 
+# fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 export PATH="$PATH:$HOME/flutter/bin"
 
@@ -164,14 +164,16 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
-eval "$(~/.rbenv/bin/rbenv init - zsh)"
+# eval "$(~/.rbenv/bin/rbenv init - zsh)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 # Go path 
 #export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$(go env GOPATH)/bin
+
+export PATH="$HOME/.config/nvm/versions/node/v22.21.0/bin:$PATH"
 
 # export PHPBREW_SET_PROMPT=1
 # [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
