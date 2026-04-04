@@ -6,6 +6,7 @@ local vue_plugin = {
     location = vue_language_server_path,
     languages = { 'vue' },
     configNamespace = 'typescript',
+    enableForWorkspaceTypeScriptVersions = true,
 }
 
 return {
