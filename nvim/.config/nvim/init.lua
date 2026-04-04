@@ -101,7 +101,8 @@ vim.diagnostic.config({
             [vim.diagnostic.severity.HINT]  = "󰌵 ",
             [vim.diagnostic.severity.INFO]  = " ",
         }
-    }
+    },
+    severity_sort = true,
 })
 
 -- local ft = require('Comment.ft')
