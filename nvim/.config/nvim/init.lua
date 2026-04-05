@@ -18,11 +18,11 @@ local lua_config = require('lsp.luals')
 vim.lsp.config.lua_ls = lua_config
 vim.lsp.enable('lua_ls')
 
-vim.lsp.enable('marksman')
+-- vim.lsp.enable('marksman')
 
-local intelephense_config = require('lsp.intelephense')
-vim.lsp.config.intelephense = intelephense_config
-vim.lsp.enable('intelephense')
+-- local intelephense_config = require('lsp.intelephense')
+-- vim.lsp.config.intelephense = intelephense_config
+-- vim.lsp.enable('intelephense')
 
 vim.lsp.enable('phpactor')
 vim.lsp.enable('jsonls')
